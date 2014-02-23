@@ -4,6 +4,8 @@
 
 @interface XNGOAuth1RequestSerializer : AFHTTPRequestSerializer
 
+@property (nonatomic) XNGOAuthToken *requestToken;
+
 - (id)initWithService:(NSString *)service consumerKey:(NSString *)consumerKey secret:(NSString *)consumerSecret;
 
 - (XNGOAuthToken *)accessToken;
