@@ -1,6 +1,6 @@
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import "XNGOAuth1RequestSerializer.h"
 
-@class XNGOAuth1RequestSerializer;
 @class XNGOAuthToken;
 
 FOUNDATION_EXPORT NSString *const XNGOAuth1ErrorDomain;

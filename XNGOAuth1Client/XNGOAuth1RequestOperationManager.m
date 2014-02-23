@@ -1,5 +1,4 @@
 #import "XNGOAuth1RequestOperationManager.h"
-#import "XNGOAuth1RequestSerializer.h"
 #import "XNGOAuthToken.h"
 
 NSString * const XNGOAuth1ErrorDomain = @"XNGOAuth1ErrorDomain";
