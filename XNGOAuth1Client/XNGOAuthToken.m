@@ -23,7 +23,7 @@
 
 - (id)initWithQueryString:(NSString *)queryString {
 
-    if (queryString || queryString.length == 0) {
+    if (!queryString || queryString.length == 0) {
         return nil;
     }
 

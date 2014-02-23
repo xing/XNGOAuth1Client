@@ -2,8 +2,9 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 #import "XNGOAuth1RequestOperationManager.h"
-#import "XNGOAuth1RequestSerializer.h"
 #import "XNGOAuthToken.h"
+#import "OHHTTPStubs.h"
+#import "OHHTTPStubsResponse+JSON.h"
 
 @interface XNGOAuth1RequestSerializer ()
 @property (nonatomic) NSString *service;
@@ -77,6 +78,35 @@
     [classUnderTest deauthorize];
 
     expect(classUnderTest.isAuthorized).to.beFalsy();
+}
+
+- (void)testAuthorizeUsingOAuthWithRequestTokenPath {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSString *responseString = @"oauth_token=1234&oauth_token_secret=456&oauth_verifier=verifier";
+        NSData *returnData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+        return [OHHTTPStubsResponse responseWithData:returnData statusCode:200 headers:nil];
+    }];
+
+    XNGOAuth1RequestOperationManager *classUnderTest = [[XNGOAuth1RequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://www.xing.com"]
+                                                                                                     consumerKey:@"consumerKey"
+                                                                                                  consumerSecret:@"consumerSecret"];
+    [classUnderTest authorizeUsingOAuthWithRequestTokenPath:@"v1/request_token"
+                                      userAuthorizationPath:@"v1/authorize"
+                                                callbackURL:[NSURL URLWithString:@"xingapp://authorize"]
+                                            accessTokenPath:@"v1/access_token"
+                                               accessMethod:@"POST"
+                                                      scope:nil
+                                                    success:^(XNGOAuthToken *oAuthToken, id responseObject) {
+                                                        expect(oAuthToken).toNot.beNil();
+                                                        expect(oAuthToken.token).to.equal(@"1234");
+                                                        expect(oAuthToken.secret).to.equal(@"456");
+                                                        expect(oAuthToken.verifier).to.equal(@"verifier");
+                                                    } failure:^(NSError *error) {
+    }];
+
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.1]];
 }
 
 @end
