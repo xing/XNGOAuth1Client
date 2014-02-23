@@ -23,7 +23,6 @@
 		F0EADDEF18BA520000BB8831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDEE18BA520000BB8831 /* Foundation.framework */; };
 		F0EADDF118BA520000BB8831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF018BA520000BB8831 /* CoreGraphics.framework */; };
 		F0EADDF318BA520000BB8831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF218BA520000BB8831 /* UIKit.framework */; };
-		F0EADDF918BA520000BB8831 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0EADDF718BA520000BB8831 /* InfoPlist.strings */; };
 		F0EADE0818BA520000BB8831 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADE0718BA520000BB8831 /* XCTest.framework */; };
 		F0EADE0918BA520000BB8831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDEE18BA520000BB8831 /* Foundation.framework */; };
 		F0EADE0A18BA520000BB8831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF218BA520000BB8831 /* UIKit.framework */; };
@@ -68,7 +67,6 @@
 		F0EADDEE18BA520000BB8831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0EADDF018BA520000BB8831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F0EADDF218BA520000BB8831 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		F0EADDF818BA520000BB8831 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0EADE0618BA520000BB8831 /* XNGOAuth1ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XNGOAuth1ClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EADE0718BA520000BB8831 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F0EADE0F18BA520000BB8831 /* XNGOAuth1ClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XNGOAuth1ClientTests-Info.plist"; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 		F0EADDF518BA520000BB8831 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F0EADDF718BA520000BB8831 /* InfoPlist.strings */,
 				1643A18878CCBB2A515178BA /* XNGAppDelegate.m */,
 				1643AC99E131877F29F4050D /* XNGAppDelegate.h */,
 				1643A5B1448CB85FEDB3950F /* main.m */,
@@ -267,7 +264,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0EADDF918BA520000BB8831 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,14 +377,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F0EADDF718BA520000BB8831 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F0EADDF818BA520000BB8831 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		F0EADE1018BA520000BB8831 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
