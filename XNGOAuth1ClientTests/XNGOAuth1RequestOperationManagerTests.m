@@ -83,7 +83,9 @@
 - (void)testAuthorizeUsingOAuthWithRequestTokenPath {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         NSURL *url = [NSURL URLWithString:@"https://www.xing.com/v1/request_token"];
-        if ([request.URL isEqual:url]) {
+        NSString *parameterString = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
+        if ([request.URL isEqual:url] &&
+             [parameterString isEqualToString:@"oauth_callback=xingapp%3A%2F%2Fauthorize"]) {
             return YES;
         }
 
@@ -120,7 +122,9 @@
 - (void)testAcquireOAuthRequestTokenWithPath {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         NSURL *url = [NSURL URLWithString:@"https://www.xing.com/v1/request_token"];
-        if ([request.URL isEqual:url]) {
+        NSString *parameterString = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
+        if ([request.URL isEqual:url] &&
+                [parameterString isEqualToString:@"oauth_token=token&oauth_verifier=verifier"]) {
             return YES;
         }
 
@@ -134,6 +138,7 @@
 
 
     XNGOAuthToken *token = [[XNGOAuthToken alloc] initWithToken:@"token" secret:@"secret" expiration:nil];
+    [token setValue:@"verifier" forKeyPath:@"verifier"];
     XNGOAuth1RequestOperationManager *classUnderTest = [[XNGOAuth1RequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://www.xing.com"]
                                                                                                      consumerKey:@"consumerKey"
                                                                                                   consumerSecret:@"consumerSecret"];
