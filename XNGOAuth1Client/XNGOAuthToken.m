@@ -3,8 +3,6 @@
 
 @interface XNGOAuthToken ()
 
-@property (nonatomic) NSString *token;
-@property (nonatomic) NSString *secret;
 @property (nonatomic) NSDate *expiration;
 
 @end
