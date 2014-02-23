@@ -40,15 +40,15 @@ NSString * const XNGOAuth1ErrorDomain = @"XNGOAuth1ErrorDomain";
 
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"oauth_callback"] = [callbackURL absoluteString];
-    if (scope && !self.requestSerializer.accessToken)
+    if (scope && !self.requestSerializer.accessToken) {
         parameters[@"scope"] = scope;
+    }
 
     NSString *URLString = [[NSURL URLWithString:requestTokenPath relativeToURL:self.baseURL] absoluteString];
     NSError *error;
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:accessMethod URLString:URLString parameters:parameters error:&error];
 
-    if (error)
-    {
+    if (error) {
         failure(error);
         return;
     }
