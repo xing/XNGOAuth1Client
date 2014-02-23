@@ -12,6 +12,7 @@
 		1643A251F4EF3C30818AB5D0 /* NSString+XNGOAuth1Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643A262D95D8B057296960D /* NSString+XNGOAuth1Additions.m */; };
 		1643A2E8E3366994CA32C8E1 /* XNGOAuthToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643AD70E6FE939DF493439F /* XNGOAuthToken.m */; };
 		1643A4BFA8BE06567AB8C9AC /* XNGOAuth1RequestSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643AE14D152C1C40E373897 /* XNGOAuth1RequestSerializerTests.m */; };
+		1643A535A36DA92F845C9279 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643A5B1448CB85FEDB3950F /* main.m */; };
 		1643A92EB4CBAEC554D5F972 /* NSDictionary+XNGOAuth1Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643A0150798658516870DF5 /* NSDictionary+XNGOAuth1Additions.m */; };
 		1643A98E7C77E9A0EBF260DF /* XNGOAuthTokenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643A617C9A1FF8ADF4D31B9 /* XNGOAuthTokenTests.m */; };
 		1643AA25DED75B9D9A3D4D74 /* XNGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643A18878CCBB2A515178BA /* XNGAppDelegate.m */; };
@@ -23,7 +24,6 @@
 		F0EADDF118BA520000BB8831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF018BA520000BB8831 /* CoreGraphics.framework */; };
 		F0EADDF318BA520000BB8831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF218BA520000BB8831 /* UIKit.framework */; };
 		F0EADDF918BA520000BB8831 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0EADDF718BA520000BB8831 /* InfoPlist.strings */; };
-		F0EADDFB18BA520000BB8831 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EADDFA18BA520000BB8831 /* main.m */; };
 		F0EADE0818BA520000BB8831 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADE0718BA520000BB8831 /* XCTest.framework */; };
 		F0EADE0918BA520000BB8831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDEE18BA520000BB8831 /* Foundation.framework */; };
 		F0EADE0A18BA520000BB8831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF218BA520000BB8831 /* UIKit.framework */; };
@@ -46,12 +46,15 @@
 		1643A2202C291B03D97B4AE7 /* NSDictionaryAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryAdditionsTests.m; sourceTree = "<group>"; };
 		1643A262D95D8B057296960D /* NSString+XNGOAuth1Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XNGOAuth1Additions.m"; sourceTree = "<group>"; };
 		1643A3683ED91D5A1FDBEE20 /* NSDictionary+XNGOAuth1Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XNGOAuth1Additions.h"; sourceTree = "<group>"; };
+		1643A5B1448CB85FEDB3950F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Other Sources/main.m"; sourceTree = SOURCE_ROOT; };
 		1643A617C9A1FF8ADF4D31B9 /* XNGOAuthTokenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGOAuthTokenTests.m; sourceTree = "<group>"; };
 		1643A89BFC5FAE6E69965DE0 /* XNGOAuth1RequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNGOAuth1RequestOperationManager.h; sourceTree = "<group>"; };
 		1643A8E5EF3BFE9ED6A39FDD /* NSString+XNGOAuth1Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XNGOAuth1Additions.h"; sourceTree = "<group>"; };
+		1643A95C5951E4E3E6E2BC4A /* XNGOAuth1Client-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; name = "XNGOAuth1Client-Info.plist"; path = "Other Sources/XNGOAuth1Client-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1643A98A7A46FDA9024E1F9E /* XNGOAuth1RequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNGOAuth1RequestSerializer.h; sourceTree = "<group>"; };
 		1643AAD361BA61127AEE14EA /* XNGOAuth1RequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGOAuth1RequestSerializer.m; sourceTree = "<group>"; };
 		1643AC99E131877F29F4050D /* XNGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XNGAppDelegate.h; path = "Other Sources/XNGAppDelegate.h"; sourceTree = SOURCE_ROOT; };
+		1643AD6A2E2AE14975C24822 /* XNGOAuth1Client-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XNGOAuth1Client-Prefix.pch"; path = "Other Sources/XNGOAuth1Client-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		1643AD70E6FE939DF493439F /* XNGOAuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGOAuthToken.m; sourceTree = "<group>"; };
 		1643ADCBCA11062BB9F871AB /* XNGOAuth1RequestOperationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGOAuth1RequestOperationManagerTests.m; sourceTree = "<group>"; };
 		1643AE14D152C1C40E373897 /* XNGOAuth1RequestSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGOAuth1RequestSerializerTests.m; sourceTree = "<group>"; };
@@ -65,10 +68,7 @@
 		F0EADDEE18BA520000BB8831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0EADDF018BA520000BB8831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F0EADDF218BA520000BB8831 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		F0EADDF618BA520000BB8831 /* XNGOAuth1Client-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XNGOAuth1Client-Info.plist"; sourceTree = "<group>"; };
 		F0EADDF818BA520000BB8831 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F0EADDFA18BA520000BB8831 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F0EADDFC18BA520000BB8831 /* XNGOAuth1Client-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XNGOAuth1Client-Prefix.pch"; sourceTree = "<group>"; };
 		F0EADE0618BA520000BB8831 /* XNGOAuth1ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XNGOAuth1ClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EADE0718BA520000BB8831 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F0EADE0F18BA520000BB8831 /* XNGOAuth1ClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XNGOAuth1ClientTests-Info.plist"; sourceTree = "<group>"; };
@@ -156,12 +156,12 @@
 		F0EADDF518BA520000BB8831 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F0EADDF618BA520000BB8831 /* XNGOAuth1Client-Info.plist */,
 				F0EADDF718BA520000BB8831 /* InfoPlist.strings */,
-				F0EADDFA18BA520000BB8831 /* main.m */,
-				F0EADDFC18BA520000BB8831 /* XNGOAuth1Client-Prefix.pch */,
 				1643A18878CCBB2A515178BA /* XNGAppDelegate.m */,
 				1643AC99E131877F29F4050D /* XNGAppDelegate.h */,
+				1643A5B1448CB85FEDB3950F /* main.m */,
+				1643A95C5951E4E3E6E2BC4A /* XNGOAuth1Client-Info.plist */,
+				1643AD6A2E2AE14975C24822 /* XNGOAuth1Client-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -349,13 +349,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0EADDFB18BA520000BB8831 /* main.m in Sources */,
 				1643AEB823CDAD4DBEC806B5 /* XNGOAuth1RequestSerializer.m in Sources */,
 				1643A2E8E3366994CA32C8E1 /* XNGOAuthToken.m in Sources */,
 				1643AEA46170FAA62099EAC5 /* XNGOAuth1RequestOperationManager.m in Sources */,
 				1643A92EB4CBAEC554D5F972 /* NSDictionary+XNGOAuth1Additions.m in Sources */,
 				1643A251F4EF3C30818AB5D0 /* NSString+XNGOAuth1Additions.m in Sources */,
 				1643AA25DED75B9D9A3D4D74 /* XNGAppDelegate.m in Sources */,
+				1643A535A36DA92F845C9279 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
