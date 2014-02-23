@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="XNGOAuth1ClientTests" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" SCHEME_NAME="XNGOAuth1ClientTests" PROJECT_NAME="XNGOAuth1Client" TARGET_NAME="XNGOAuth1ClientTests" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
+    <envs />
+    <method />
+  </configuration>
+</component>
