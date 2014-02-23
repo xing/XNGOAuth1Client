@@ -52,4 +52,20 @@
     expect(accessToken.expiration).to.equal(expirationDate);
 }
 
+- (void)testRemovingOAuthToken {
+    NSDate *expirationDate = [NSDate date];
+    XNGOAuthToken *token = [[XNGOAuthToken alloc] initWithToken:@"token"
+                                                         secret:@"secret"
+                                                     expiration:expirationDate];
+    XNGOAuth1RequestSerializer *classUnderTest = [[XNGOAuth1RequestSerializer alloc] initWithService:@"service"
+                                                                                         consumerKey:@"consumerKey"
+                                                                                              secret:@"consumerSecret"];
+
+    // saving
+    expect([classUnderTest saveAccessToken:token]).to.beTruthy();
+
+    // removing
+    expect([classUnderTest removeAccessToken]).to.beTruthy();
+}
+
 @end

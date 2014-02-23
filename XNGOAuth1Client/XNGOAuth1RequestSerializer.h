@@ -10,4 +10,6 @@
 
 - (BOOL)saveAccessToken:(XNGOAuthToken *)oauthToken;
 
+- (BOOL)removeAccessToken;
+
 @end

@@ -57,6 +57,11 @@
     return status == noErr;
 }
 
+- (BOOL)removeAccessToken {
+    OSStatus status = SecItemDelete((__bridge CFDictionaryRef)self.keychainDictionary);
+    return status == noErr;
+}
+
 #pragma mark - Helper
 
 - (NSDictionary *)keychainDictionary {
