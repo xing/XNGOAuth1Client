@@ -1,3 +1,5 @@
+platform :ios, '6.1'
+
 pod 'AFNetworking', '~> 2.0.3'
 
 target 'XNGOAuth1ClientTests', :exclusive => true do
