@@ -77,6 +77,8 @@
         _token = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(token))];
         _secret = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(secret))];
         _expiration = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(expiration))];
+        _verifier = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(verifier))];
+        _userInfo = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(userInfo))];
     }
 
     return self;
@@ -86,6 +88,8 @@
     [aCoder encodeObject:self.token forKey:NSStringFromSelector(@selector(token))];
     [aCoder encodeObject:self.secret forKey:NSStringFromSelector(@selector(secret))];
     [aCoder encodeObject:self.expiration forKey:NSStringFromSelector(@selector(expiration))];
+    [aCoder encodeObject:self.verifier forKey:NSStringFromSelector(@selector(verifier))];
+    [aCoder encodeObject:self.userInfo forKey:NSStringFromSelector(@selector(userInfo))];
 }
 
 @end
