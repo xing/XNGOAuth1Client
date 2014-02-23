@@ -18,7 +18,6 @@
 		F0EADE0918BA520000BB8831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDEE18BA520000BB8831 /* Foundation.framework */; };
 		F0EADE0A18BA520000BB8831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF218BA520000BB8831 /* UIKit.framework */; };
 		F0EADE1218BA520000BB8831 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0EADE1018BA520000BB8831 /* InfoPlist.strings */; };
-		F0EADE1418BA520000BB8831 /* XNGOAuth1ClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EADE1318BA520000BB8831 /* XNGOAuth1ClientTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		F0EADE0718BA520000BB8831 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F0EADE0F18BA520000BB8831 /* XNGOAuth1ClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XNGOAuth1ClientTests-Info.plist"; sourceTree = "<group>"; };
 		F0EADE1118BA520000BB8831 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F0EADE1318BA520000BB8831 /* XNGOAuth1ClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XNGOAuth1ClientTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +130,6 @@
 		F0EADE0D18BA520000BB8831 /* XNGOAuth1ClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				F0EADE1318BA520000BB8831 /* XNGOAuth1ClientTests.m */,
 				F0EADE0E18BA520000BB8831 /* Supporting Files */,
 			);
 			path = XNGOAuth1ClientTests;
@@ -288,7 +285,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0EADE1418BA520000BB8831 /* XNGOAuth1ClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
