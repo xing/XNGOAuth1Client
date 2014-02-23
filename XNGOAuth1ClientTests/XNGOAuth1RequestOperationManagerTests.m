@@ -82,7 +82,13 @@
 
 - (void)testAuthorizeUsingOAuthWithRequestTokenPath {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
+        NSURL *url = [NSURL URLWithString:@"https://www.xing.com/v1/request_token"];
+        if ([request.URL isEqual:url]) {
+            return YES;
+        }
+
+        XCTAssert(NO, @"Wrong URL");
+        return NO;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
         NSString *responseString = @"oauth_token=1234&oauth_token_secret=456&oauth_verifier=verifier";
         NSData *returnData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
@@ -99,12 +105,53 @@
                                                accessMethod:@"POST"
                                                       scope:nil
                                                     success:^(XNGOAuthToken *oAuthToken, id responseObject) {
-                                                        expect(oAuthToken).toNot.beNil();
-                                                        expect(oAuthToken.token).to.equal(@"1234");
-                                                        expect(oAuthToken.secret).to.equal(@"456");
-                                                        expect(oAuthToken.verifier).to.equal(@"verifier");
-                                                    } failure:^(NSError *error) {
+                                                                expect(oAuthToken).toNot.beNil();
+                                                                expect(oAuthToken.token).to.equal(@"1234");
+                                                                expect(oAuthToken.secret).to.equal(@"456");
+                                                                expect(oAuthToken.verifier).to.equal(@"verifier");
+                                                            }
+                                                    failure:^(NSError *error) {
+                                                                XCTAssert(NO, @"SHOULD NOT HAPPEN");
+                                                            }];
+
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.1]];
+}
+
+- (void)testAcquireOAuthRequestTokenWithPath {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        NSURL *url = [NSURL URLWithString:@"https://www.xing.com/v1/request_token"];
+        if ([request.URL isEqual:url]) {
+            return YES;
+        }
+
+        XCTAssert(NO, @"Wrong URL");
+        return NO;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSString *responseString = @"oauth_token=1234&oauth_token_secret=456&oauth_verifier=verifier";
+        NSData *returnData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+        return [OHHTTPStubsResponse responseWithData:returnData statusCode:200 headers:nil];
     }];
+
+
+    XNGOAuthToken *token = [[XNGOAuthToken alloc] initWithToken:@"token" secret:@"secret" expiration:nil];
+    XNGOAuth1RequestOperationManager *classUnderTest = [[XNGOAuth1RequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://www.xing.com"]
+                                                                                                     consumerKey:@"consumerKey"
+                                                                                                  consumerSecret:@"consumerSecret"];
+
+    [classUnderTest acquireOAuthRequestTokenWithPath:@"v1/request_token"
+                                         callbackURL:[NSURL URLWithString:@"xingapp://authorize"]
+                                        accessMethod:@"POST"
+                                        requestToken:token
+                                               scope:nil
+                                             success:^(XNGOAuthToken *requestToken, id responseObject) {
+                                                 expect(requestToken).toNot.beNil();
+                                                 expect(requestToken.token).to.equal(@"1234");
+                                                 expect(requestToken.secret).to.equal(@"456");
+                                                 expect(requestToken.verifier).to.equal(@"verifier");
+                                             }
+                                             failure:^(NSError *error) {
+                                                 XCTAssert(NO, @"SHOULD NOT HAPPEN");
+                                             }];
 
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.1]];
 }
