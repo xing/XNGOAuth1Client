@@ -33,4 +33,24 @@
     return compareResult;
 }
 
+#pragma mark - NSCoding
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+
+    if (self) {
+        _token = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(token))];
+        _secret = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(secret))];
+        _expiration = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(expiration))];
+    }
+
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.token forKey:NSStringFromSelector(@selector(token))];
+    [aCoder encodeObject:self.secret forKey:NSStringFromSelector(@selector(secret))];
+    [aCoder encodeObject:self.expiration forKey:NSStringFromSelector(@selector(expiration))];
+}
+
 @end

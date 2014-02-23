@@ -1,4 +1,4 @@
-@interface XNGOAuthToken : NSObject
+@interface XNGOAuthToken : NSObject <NSCoding>
 
 - (id)initWithToken:(NSString *)token secret:(NSString *)secret expiration:(NSDate *)expiration;
 
