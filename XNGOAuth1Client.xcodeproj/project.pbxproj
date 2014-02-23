@@ -254,8 +254,6 @@
 			mainGroup = F0EADDE218BA520000BB8831;
 			productRefGroup = F0EADDEC18BA520000BB8831 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				F0EADDEA18BA520000BB8831 /* XNGOAuth1Client */,
@@ -406,7 +404,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -445,7 +442,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -508,7 +504,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E8A4A08AB1143979C2DA0B5 /* Pods-XNGOAuth1ClientTests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XNGOAuth1Client.app/XNGOAuth1Client";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -532,7 +527,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E8A4A08AB1143979C2DA0B5 /* Pods-XNGOAuth1ClientTests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XNGOAuth1Client.app/XNGOAuth1Client";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -567,6 +561,7 @@
 				F0EADE1918BA520000BB8831 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0EADE1A18BA520000BB8831 /* Build configuration list for PBXNativeTarget "XNGOAuth1ClientTests" */ = {
 			isa = XCConfigurationList;
@@ -575,6 +570,7 @@
 				F0EADE1C18BA520000BB8831 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
