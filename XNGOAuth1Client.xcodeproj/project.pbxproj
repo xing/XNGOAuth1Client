@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1119C873F7CC4AEB96835CD8 /* libPods-XNGOAuth1ClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089A462D0344CF18D9C7BF5 /* libPods-XNGOAuth1ClientTests.a */; };
 		59C2773CB01545F29A5F4190 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DB09CFD34B46A3A6BE664D /* libPods.a */; };
 		F0EADDEF18BA520000BB8831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDEE18BA520000BB8831 /* Foundation.framework */; };
 		F0EADDF118BA520000BB8831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF018BA520000BB8831 /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		486B5A14B29A4D688B589D7D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		4E8A4A08AB1143979C2DA0B5 /* Pods-XNGOAuth1ClientTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGOAuth1ClientTests.xcconfig"; path = "Pods/Pods-XNGOAuth1ClientTests.xcconfig"; sourceTree = "<group>"; };
+		7089A462D0344CF18D9C7BF5 /* libPods-XNGOAuth1ClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XNGOAuth1ClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DB09CFD34B46A3A6BE664D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EADDEB18BA520000BB8831 /* XNGOAuth1Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNGOAuth1Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EADDEE18BA520000BB8831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,6 +71,7 @@
 				F0EADE0818BA520000BB8831 /* XCTest.framework in Frameworks */,
 				F0EADE0A18BA520000BB8831 /* UIKit.framework in Frameworks */,
 				F0EADE0918BA520000BB8831 /* Foundation.framework in Frameworks */,
+				1119C873F7CC4AEB96835CD8 /* libPods-XNGOAuth1ClientTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +86,7 @@
 				F0EADDED18BA520000BB8831 /* Frameworks */,
 				F0EADDEC18BA520000BB8831 /* Products */,
 				486B5A14B29A4D688B589D7D /* Pods.xcconfig */,
+				4E8A4A08AB1143979C2DA0B5 /* Pods-XNGOAuth1ClientTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +107,7 @@
 				F0EADDF218BA520000BB8831 /* UIKit.framework */,
 				F0EADE0718BA520000BB8831 /* XCTest.framework */,
 				E8DB09CFD34B46A3A6BE664D /* libPods.a */,
+				7089A462D0344CF18D9C7BF5 /* libPods-XNGOAuth1ClientTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0EADE1A18BA520000BB8831 /* Build configuration list for PBXNativeTarget "XNGOAuth1ClientTests" */;
 			buildPhases = (
+				826FED1E9F5345FB882B963D /* Check Pods Manifest.lock */,
 				F0EADE0218BA520000BB8831 /* Sources */,
 				F0EADE0318BA520000BB8831 /* Frameworks */,
 				F0EADE0418BA520000BB8831 /* Resources */,
+				28B84D9BD9CC4D8D9C5988B5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,7 +247,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		28B84D9BD9CC4D8D9C5988B5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-XNGOAuth1ClientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3356D5FCC1E447A399CE8ED2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		826FED1E9F5345FB882B963D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,6 +438,7 @@
 				GCC_PREFIX_HEADER = "XNGOAuth1Client/XNGOAuth1Client-Prefix.pch";
 				INFOPLIST_FILE = "XNGOAuth1Client/XNGOAuth1Client-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -414,12 +453,14 @@
 				GCC_PREFIX_HEADER = "XNGOAuth1Client/XNGOAuth1Client-Prefix.pch";
 				INFOPLIST_FILE = "XNGOAuth1Client/XNGOAuth1Client-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		F0EADE1B18BA520000BB8831 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E8A4A08AB1143979C2DA0B5 /* Pods-XNGOAuth1ClientTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XNGOAuth1Client.app/XNGOAuth1Client";
@@ -443,6 +484,7 @@
 		};
 		F0EADE1C18BA520000BB8831 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E8A4A08AB1143979C2DA0B5 /* Pods-XNGOAuth1ClientTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XNGOAuth1Client.app/XNGOAuth1Client";

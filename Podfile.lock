@@ -17,11 +17,14 @@ PODS:
   - AFNetworking/Serialization (2.0.3)
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
+  - Expecta (0.2.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0.3)
+  - Expecta (~> 0.2.3)
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
 
 COCOAPODS: 0.29.0
