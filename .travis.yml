@@ -11,4 +11,4 @@ before:
 script: 
   - script/test.sh
 after_success:
-  - ./coveralls.rb --extension m --exclude-folder Other\ Sources --exclude-folder script --exclude-folder XNGOAuth1ClientTests --exclude-folder Pods
+  - script/coveralls.rb --extension m --exclude-folder Other\ Sources --exclude-folder script --exclude-folder XNGOAuth1ClientTests --exclude-folder Pods
