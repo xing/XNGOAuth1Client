@@ -2,6 +2,7 @@ language: objective-c
 env:
   - OS=6.1
   - OS=7.0
+rvm: 1.9.3
 before:
   - brew update
   - bundle install
