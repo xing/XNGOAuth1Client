@@ -4,12 +4,12 @@ Pod::Spec.new do |s|
   s.license = 'MIT'
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.8'
-  s.summary = 'A OAuth1 Client based on AFNetworking 2.0 for use in the XNGAPIClient'
+  s.summary = 'A OAuth1 client based on AFNetworking 2.0 for use in the XNGAPIClient'
   s.author  = {
     'XING iOS Team' => 'iphonedev@xing.com'
   }
   s.source = {
-    :git => 'git@github.com:xing/XNGOAuth1Client.git',
+    :git => 'https://github.com/xing/XNGOAuth1Client.git',
     :tag => s.version.to_s
   }
   s.source_files = 'XNGOAuth1Client/*.{h,m}'
