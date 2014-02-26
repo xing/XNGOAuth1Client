@@ -27,7 +27,7 @@
         return nil;
     }
 
-    NSDictionary *attributes = [NSDictionary dictionaryFromQueryString:queryString];
+    NSDictionary *attributes = [NSDictionary xngo_dictionaryFromQueryString:queryString];
 
     if (attributes.allKeys.count == 0) {
         return nil;
