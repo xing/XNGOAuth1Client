@@ -1,9 +1,9 @@
 @interface NSDictionary (XNGOAuth1Additions)
 
-+ (id)xngo_dictionaryFromQueryString:(NSString *)queryString;
++ (id)xng_dictionaryFromQueryString:(NSString *)queryString;
 
-- (id)xngo_initWithQueryString:(NSString *)queryString;
+- (id)xng_initWithQueryString:(NSString *)queryString;
 
-- (NSString *)xngo_queryStringRepresentation;
+- (NSString *)xng_queryStringRepresentation;
 
 @end

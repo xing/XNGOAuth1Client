@@ -1,7 +1,7 @@
 @interface NSString (XNGOAuth1Additions)
 
-- (NSString *)xngo_URLEncode;
+- (NSString *)xng_URLEncode;
 
-- (NSString *)xngo_URLDecode;
+- (NSString *)xng_URLDecode;
 
 @end

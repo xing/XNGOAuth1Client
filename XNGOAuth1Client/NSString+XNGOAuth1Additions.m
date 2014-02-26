@@ -2,7 +2,7 @@
 
 @implementation NSString (XNGOAuth1Additions)
 
-- (NSString *)xngo_URLEncode {
+- (NSString *)xng_URLEncode {
     return (__bridge_transfer NSString *)
             CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
                     (__bridge CFStringRef)self,
@@ -11,7 +11,7 @@
                     kCFStringEncodingUTF8);
 }
 
-- (NSString *)xngo_URLDecode {
+- (NSString *)xng_URLDecode {
     return (__bridge_transfer NSString *)
             CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
                     (__bridge CFStringRef)self,

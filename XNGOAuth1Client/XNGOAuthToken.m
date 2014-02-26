@@ -32,7 +32,7 @@ static NSString *const XNGOAuthTokenDurationKey = @"oauth_token_duration";
         return nil;
     }
 
-    NSDictionary *attributes = [NSDictionary xngo_dictionaryFromQueryString:queryString];
+    NSDictionary *attributes = [NSDictionary xng_dictionaryFromQueryString:queryString];
 
     if (attributes.allKeys.count == 0) {
         return nil;

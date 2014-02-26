@@ -3,29 +3,29 @@
 
 @implementation NSDictionary (XNGOAuth1Additions)
 
-+ (id)xngo_dictionaryFromQueryString:(NSString *)queryString {
-    return [[NSDictionary alloc] xngo_initWithQueryString:queryString];
++ (id)xng_dictionaryFromQueryString:(NSString *)queryString {
+    return [[NSDictionary alloc] xng_initWithQueryString:queryString];
 }
 
-- (id)xngo_initWithQueryString:(NSString *)queryString {
+- (id)xng_initWithQueryString:(NSString *)queryString {
     NSArray *components = [queryString componentsSeparatedByString:@"&"];
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
 
     for (NSString *component in components) {
         NSArray *keyValue = [component componentsSeparatedByString:@"="];
-        NSString *key = [keyValue[0] xngo_URLDecode];
-        NSString *value = [keyValue[1] xngo_URLDecode];
+        NSString *key = [keyValue[0] xng_URLDecode];
+        NSString *value = [keyValue[1] xng_URLDecode];
         [dictionary setObject:value forKey:key];
     }
 
     return dictionary;
 }
 
-- (NSString *)xngo_queryStringRepresentation {
+- (NSString *)xng_queryStringRepresentation {
     NSMutableArray *paramArray = [NSMutableArray array];
 
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
-        NSString *param = [NSString stringWithFormat:@"%@=%@", [key xngo_URLEncode], [value xngo_URLEncode]];
+        NSString *param = [NSString stringWithFormat:@"%@=%@", [key xng_URLEncode], [value xng_URLEncode]];
         [paramArray addObject:param];
     }];
 
