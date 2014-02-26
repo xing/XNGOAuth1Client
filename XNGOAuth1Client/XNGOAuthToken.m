@@ -1,6 +1,11 @@
 #import "XNGOAuthToken.h"
 #import "NSDictionary+XNGOAuth1Additions.h"
 
+static NSString *const XNGOAuthTokenTokenKey = @"oauth_token";
+static NSString *const XNGOAuthTokenSecretKey = @"oauth_token_secret";
+static NSString *const XNGOauthTokenVerifierKey = @"oauth_verifier";
+static NSString *const XNGOAuthTokenDurationKey = @"oauth_token_duration";
+
 @interface XNGOAuthToken ()
 
 @property (nonatomic) NSDate *expiration;
@@ -33,13 +38,13 @@
         return nil;
     }
 
-    NSString *token = attributes[@"oauth_token"];
-    NSString *secret = attributes[@"oauth_token_secret"];
-    NSString *verifier = attributes[@"oauth_verifier"];
+    NSString *token = attributes[XNGOAuthTokenTokenKey];
+    NSString *secret = attributes[XNGOAuthTokenSecretKey];
+    NSString *verifier = attributes[XNGOauthTokenVerifierKey];
 
     NSDate *expiration;
-    if (attributes[@"oauth_token_duration"]) {
-        expiration = [NSDate dateWithTimeIntervalSinceNow:[attributes[@"oauth_token_duration"] doubleValue]];
+    if (attributes[XNGOAuthTokenDurationKey]) {
+        expiration = [NSDate dateWithTimeIntervalSinceNow:[attributes[XNGOAuthTokenDurationKey] doubleValue]];
     }
 
     self = [self initWithToken:token secret:secret expiration:expiration];
@@ -48,7 +53,7 @@
         _verifier = verifier;
 
         NSMutableDictionary *mutableUserInfo = [attributes mutableCopy];
-        [mutableUserInfo removeObjectsForKeys:@[@"oauth_token", @"oauth_token_secret", @"oauth_verifier", @"oauth_token_duration"]];
+        [mutableUserInfo removeObjectsForKeys:@[XNGOAuthTokenTokenKey, XNGOAuthTokenSecretKey, XNGOauthTokenVerifierKey, XNGOAuthTokenDurationKey]];
         if (mutableUserInfo.allKeys.count > 0) {
             _userInfo = [NSDictionary dictionaryWithDictionary:mutableUserInfo];
         }
