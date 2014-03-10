@@ -1,6 +1,6 @@
 platform :ios, '6.1'
 
-pod 'AFNetworking', '~> 2.0.3'
+pod 'AFNetworking', '~> 2.2.0'
 
 target 'XNGOAuth1ClientTests', :exclusive => true do
   pod 'Expecta',     '~> 0.2.3'
