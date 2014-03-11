@@ -1,9 +1,10 @@
 #import <XCTest/XCTest.h>
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
-#import "XNGOAuth1RequestOperationManager.h"
+#import <OHHTTPStubs/OHHTTPStubs.h>
+
+#import <XNGOAuth1Client/XNGOAuth1RequestOperationManager.h>
 #import <XNGOAuth1Client/XNGOAuthToken.h>
-#import "OHHTTPStubs.h"
 
 @interface XNGOAuth1RequestSerializer ()
 @property (nonatomic) NSString *service;
