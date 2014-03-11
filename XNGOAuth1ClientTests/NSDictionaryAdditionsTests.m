@@ -2,7 +2,7 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 
-#import "NSDictionary+XNGOAuth1Additions.h"
+#import <XNGOAuth1Client/NSDictionary+XNGOAuth1Additions.h>
 
 @interface NSDictionaryAdditionsTests : XCTestCase
 

@@ -2,7 +2,7 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 
-#import "XNGOAuthToken.h"
+#import <XNGOAuth1Client/XNGOAuthToken.h>
 
 @interface XNGOAuthToken ()
 @property (nonatomic) NSDate *expiration;
