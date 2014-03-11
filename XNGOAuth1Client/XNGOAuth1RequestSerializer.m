@@ -1,13 +1,6 @@
 #import "XNGOAuth1RequestSerializer.h"
 #import "XNGOAuthToken.h"
-
-@interface XNGOAuth1RequestSerializer ()
-
-@property (nonatomic) NSString *service;
-@property (nonatomic) NSString *consumerKey;
-@property (nonatomic) NSString *consumerSecret;
-
-@end
+#import "XNGOAuth1RequestSerializer_Private.h"
 
 @implementation XNGOAuth1RequestSerializer
 
