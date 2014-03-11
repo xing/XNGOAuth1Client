@@ -20,15 +20,22 @@ PODS:
     - AFNetworking/NSURLSession
   - Expecta (0.2.3)
   - OHHTTPStubs (3.1.0)
+  - XNGOAuth1Client (0.0.2):
+    - AFNetworking (~> 2.2.0)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.2.0)
   - Expecta (~> 0.2.3)
   - OHHTTPStubs (~> 3.1.0)
+  - XNGOAuth1Client (from `./XNGOAuth1Client.podspec`)
+
+EXTERNAL SOURCES:
+  XNGOAuth1Client:
+    :path: ./XNGOAuth1Client.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
   Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
   OHHTTPStubs: d67c42c0212f0883ddb8592375aa0dc00dc50a36
+  XNGOAuth1Client: 89ee0b691078a97fe57de2710efe7d148447867c
 
 COCOAPODS: 0.29.0
