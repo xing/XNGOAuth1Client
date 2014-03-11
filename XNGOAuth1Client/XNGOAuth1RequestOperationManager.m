@@ -44,8 +44,14 @@ NSString * const XNGOAuth1ErrorDomain = @"XNGOAuth1ErrorDomain";
         parameters[@"scope"] = scope;
     }
 
+    NSError *error;
     NSString *URLString = [[NSURL URLWithString:requestTokenPath relativeToURL:self.baseURL] absoluteString];
-    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:accessMethod URLString:URLString parameters:parameters];
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:accessMethod URLString:URLString parameters:parameters error:&error];
+
+    if (error && failure) {
+        failure(error);
+        return;
+    }
 
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.responseSerializer = defaultSerializer;
@@ -80,8 +86,14 @@ NSString * const XNGOAuth1ErrorDomain = @"XNGOAuth1ErrorDomain";
         parameters[@"oauth_token"]    = requestToken.token;
         parameters[@"oauth_verifier"] = requestToken.verifier;
 
+        NSError *error;
         NSString *URLString = [[NSURL URLWithString:path relativeToURL:self.baseURL] absoluteString];
-        NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:accessMethod URLString:URLString parameters:parameters];
+        NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:accessMethod URLString:URLString parameters:parameters error:&error];
+
+        if (error && failure) {
+            failure(error);
+            return;
+        }
 
         AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
             self.responseSerializer = defaultSerializer;
