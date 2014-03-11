@@ -3,10 +3,7 @@
 #import <Expecta/Expecta.h>
 
 #import <XNGOAuth1Client/XNGOAuthToken.h>
-
-@interface XNGOAuthToken ()
-@property (nonatomic) NSDate *expiration;
-@end
+#import <XNGOAuth1Client/XNGOAuthToken_Private.h>
 
 @interface XNGOAuthTokenTests : XCTestCase
 

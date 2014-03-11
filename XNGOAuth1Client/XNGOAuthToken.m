@@ -1,16 +1,11 @@
 #import "XNGOAuthToken.h"
 #import "NSDictionary+XNGOAuth1Additions.h"
+#import "XNGOAuthToken_Private.h"
 
 static NSString *const XNGOAuthTokenTokenKey = @"oauth_token";
 static NSString *const XNGOAuthTokenSecretKey = @"oauth_token_secret";
 static NSString *const XNGOAuthTokenVerifierKey = @"oauth_verifier";
 static NSString *const XNGOAuthTokenDurationKey = @"oauth_token_duration";
-
-@interface XNGOAuthToken ()
-
-@property (nonatomic) NSDate *expiration;
-
-@end
 
 @implementation XNGOAuthToken
 
