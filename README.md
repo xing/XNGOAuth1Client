@@ -1,6 +1,6 @@
 # XNGOAuth1Client
 
-[![Build Status](https://travis-ci.org/pietbrauer/XNGOAuth1Client.png?branch=master)](https://travis-ci.org/pietbrauer/XNGOAuth1Client) [![Dependency Status](https://www.versioneye.com/objective-c/xngoauth1client/0.0.2/badge.png)](https://www.versioneye.com/objective-c/xngoauth1client/0.0.2)
+[![Build Status](https://travis-ci.org/pietbrauer/XNGOAuth1Client.svg?branch=master)](https://travis-ci.org/pietbrauer/XNGOAuth1Client) [![Dependency Status](https://www.versioneye.com/objective-c/xngoauth1client/0.0.2/badge.png)](https://www.versioneye.com/objective-c/xngoauth1client/0.0.2)
 
 An OAuth1Client using AFNetworking 2.0 for use in XNGAPIClient.
 
