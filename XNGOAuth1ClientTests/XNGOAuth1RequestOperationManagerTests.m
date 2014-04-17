@@ -77,7 +77,7 @@
 
 - (void)testAuthorizeUsingOAuthWithRequestTokenPath {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        NSURL *url = [NSURL URLWithString:@"https://www.xing.com/v1/request_token"];
+        NSURL *url = [NSURL URLWithString:@"https://api.xing.com/v1/request_token"];
         NSString *parameterString = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
         if ([request.URL isEqual:url] &&
              [parameterString isEqualToString:@"oauth_callback=xingapp%3A%2F%2Fauthorize"]) {
@@ -92,7 +92,7 @@
         return [OHHTTPStubsResponse responseWithData:returnData statusCode:200 headers:nil];
     }];
 
-    XNGOAuth1RequestOperationManager *classUnderTest = [[XNGOAuth1RequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://www.xing.com"]
+    XNGOAuth1RequestOperationManager *classUnderTest = [[XNGOAuth1RequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.xing.com"]
                                                                                                      consumerKey:@"consumerKey"
                                                                                                   consumerSecret:@"consumerSecret"];
     [classUnderTest authorizeUsingOAuthWithRequestTokenPath:@"v1/request_token"
@@ -116,7 +116,7 @@
 
 - (void)testAcquireOAuthRequestTokenWithPath {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        NSURL *url = [NSURL URLWithString:@"https://www.xing.com/v1/request_token"];
+        NSURL *url = [NSURL URLWithString:@"https://api.xing.com/v1/request_token"];
         NSString *parameterString = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
         if ([request.URL isEqual:url] &&
                 [parameterString isEqualToString:@"oauth_token=token&oauth_verifier=verifier"]) {
@@ -134,7 +134,7 @@
 
     XNGOAuthToken *token = [[XNGOAuthToken alloc] initWithToken:@"token" secret:@"secret" expiration:nil];
     [token setValue:@"verifier" forKeyPath:@"verifier"];
-    XNGOAuth1RequestOperationManager *classUnderTest = [[XNGOAuth1RequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://www.xing.com"]
+    XNGOAuth1RequestOperationManager *classUnderTest = [[XNGOAuth1RequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.xing.com"]
                                                                                                      consumerKey:@"consumerKey"
                                                                                                   consumerSecret:@"consumerSecret"];
 
