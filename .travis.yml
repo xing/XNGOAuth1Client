@@ -1,8 +1,8 @@
 language: objective-c
-env:
-  - OS=7.0
 rvm: 2.1.2
-before:
+env:
+  - OS=7.1
+before_install:
   - bundle install
   - cd Example && bundle exec pod install && cd ..
 script: 
