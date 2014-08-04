@@ -28,11 +28,11 @@ PODS:
 DEPENDENCIES:
   - Expecta (~> 0.2.3)
   - OHHTTPStubs (~> 3.1.0)
-  - XNGOAuth1Client (from `./XNGOAuth1Client.podspec`)
+  - XNGOAuth1Client (from `../XNGOAuth1Client.podspec`)
 
 EXTERNAL SOURCES:
   XNGOAuth1Client:
-    :path: ./XNGOAuth1Client.podspec
+    :path: ../XNGOAuth1Client.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: 97717ebb457b0da5627c17729d0260f210aa1dd9
