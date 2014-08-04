@@ -1,11 +1,9 @@
 language: objective-c
 env:
-  - OS=6.1
   - OS=7.0
-rvm: 1.9.3
+rvm: 2.1.2
 before:
-  - brew update
   - bundle install
-  - bundle exec pod install
+  - cd Example && bundle exec pod install && cd ..
 script: 
   - script/test.sh
