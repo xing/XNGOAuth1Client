@@ -7,3 +7,10 @@ target 'XNGOAuth1ClientTests', :exclusive => true do
   pod 'Expecta',     '~> 0.2.3'
   pod 'OHHTTPStubs', '~> 3.1.0'
 end
+
+begin
+  require 'slather'
+  Slather.prepare_pods(self)
+rescue LoadError
+  puts 'Slather has been disabled (not installed).'
+end
