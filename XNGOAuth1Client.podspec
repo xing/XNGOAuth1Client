@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.source_files = 'XNGOAuth1Client/*.{h,m}'
   s.requires_arc = true
   s.homepage = 'https://www.xing.com'
-  s.dependency   'AFNetworking', '~> 2.3.1'
+  s.dependency   'AFNetworking', '~> 2.4.1'
   s.frameworks = 'Security'
 end

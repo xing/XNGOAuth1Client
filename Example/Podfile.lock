@@ -1,29 +1,29 @@
 PODS:
-  - AFNetworking (2.3.1):
+  - AFNetworking (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.3.1):
+  - AFNetworking/NSURLConnection (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.3.1):
+  - AFNetworking/NSURLSession (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.3.1)
-  - AFNetworking/Security (2.3.1)
-  - AFNetworking/Serialization (2.3.1)
-  - AFNetworking/UIKit (2.3.1):
+  - AFNetworking/Reachability (2.4.1)
+  - AFNetworking/Security (2.4.1)
+  - AFNetworking/Serialization (2.4.1)
+  - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Expecta (0.2.3)
   - OHHTTPStubs (3.1.0)
   - XNGOAuth1Client (0.0.2):
-    - AFNetworking (~> 2.3.1)
+    - AFNetworking (~> 2.4.1)
 
 DEPENDENCIES:
   - Expecta (~> 0.2.3)
@@ -35,9 +35,9 @@ EXTERNAL SOURCES:
     :path: ../XNGOAuth1Client.podspec
 
 SPEC CHECKSUMS:
-  AFNetworking: 97717ebb457b0da5627c17729d0260f210aa1dd9
+  AFNetworking: 12f5addc2d9797b40efc6f24608481c1bec67e9a
   Expecta: 5322c1e011aace0dc12e9825289f803d0e93a375
   OHHTTPStubs: 6101a11b6dfd4e820d5d6ca3775482b9f543b43a
-  XNGOAuth1Client: fe49e5f36a9608bf0b01e1f17dff509c9103a913
+  XNGOAuth1Client: 2ee86bcb3255bce3c6e4f6e3551feb11242058bf
 
 COCOAPODS: 0.33.1
