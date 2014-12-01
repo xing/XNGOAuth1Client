@@ -93,9 +93,6 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
 - (id)initWithBaseURL:(NSURL *)url
                   key:(NSString *)clientID
                secret:(NSString *)secret {
-    NSParameterAssert(clientID);
-    NSParameterAssert(secret);
-
     self = [super init];
     if (!self) {
         return nil;
