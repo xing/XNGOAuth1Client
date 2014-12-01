@@ -1,6 +1,7 @@
 language: objective-c
-rvm: 2.1.2
-env: OS=7.1
+osx_image: xcode61
+cache: bundler
+env: OS=8.1
 before_install:
   - bundle install
   - cd Example && bundle exec pod install && cd ..
