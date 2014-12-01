@@ -1,10 +1,3 @@
-//
-//  AFOAuth1Client.h
-//
-//  Created by Joel Chen on 3/4/14.
-//  Copyright (c) 2014 Joel Chen [http://lnkd.in/bwwnBWR]
-//
-
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 

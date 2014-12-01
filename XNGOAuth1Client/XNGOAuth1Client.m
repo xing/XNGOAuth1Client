@@ -1,13 +1,4 @@
-//
-//  AFOAuth1Client.m
-//
-//  Created by Joel Chen on 3/4/14.
-//  Copyright (c) 2014 Joel Chen [http://lnkd.in/bwwnBWR]
-//
-
 #import "XNGOAuth1Client.h"
-#import "AFNetworking.h"
-
 #import <CommonCrypto/CommonHMAC.h>
 
 static NSString *const kAFOAuth1Version = @"1.0";

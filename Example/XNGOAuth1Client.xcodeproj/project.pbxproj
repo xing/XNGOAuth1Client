@@ -11,9 +11,6 @@
 		59C2773CB01545F29A5F4190 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DB09CFD34B46A3A6BE664D /* libPods.a */; };
 		F01F8BF1198FA51A00164FD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BEC198FA51A00164FD2 /* main.m */; };
 		F01F8BF2198FA51A00164FD2 /* XNGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BEE198FA51A00164FD2 /* XNGAppDelegate.m */; };
-		F01F8C00198FA70100164FD2 /* NSDictionaryAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BF8198FA6FC00164FD2 /* NSDictionaryAdditionsTests.m */; };
-		F01F8C01198FA70100164FD2 /* XNGOAuth1RequestOperationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BF9198FA6FC00164FD2 /* XNGOAuth1RequestOperationManagerTests.m */; };
-		F01F8C02198FA70100164FD2 /* XNGOAuth1RequestSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BFA198FA6FC00164FD2 /* XNGOAuth1RequestSerializerTests.m */; };
 		F01F8C03198FA70100164FD2 /* XNGOAuthTokenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BFB198FA6FC00164FD2 /* XNGOAuthTokenTests.m */; };
 		F0EADDEF18BA520000BB8831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDEE18BA520000BB8831 /* Foundation.framework */; };
 		F0EADDF118BA520000BB8831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF018BA520000BB8831 /* CoreGraphics.framework */; };
@@ -59,9 +56,6 @@
 		F01F8BEE198FA51A00164FD2 /* XNGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		F01F8BEF198FA51A00164FD2 /* XNGOAuth1Client-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "XNGOAuth1Client-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F01F8BF0198FA51A00164FD2 /* XNGOAuth1Client-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XNGOAuth1Client-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		F01F8BF8198FA6FC00164FD2 /* NSDictionaryAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDictionaryAdditionsTests.m; path = Tests/NSDictionaryAdditionsTests.m; sourceTree = SOURCE_ROOT; };
-		F01F8BF9198FA6FC00164FD2 /* XNGOAuth1RequestOperationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XNGOAuth1RequestOperationManagerTests.m; path = Tests/XNGOAuth1RequestOperationManagerTests.m; sourceTree = SOURCE_ROOT; };
-		F01F8BFA198FA6FC00164FD2 /* XNGOAuth1RequestSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XNGOAuth1RequestSerializerTests.m; path = Tests/XNGOAuth1RequestSerializerTests.m; sourceTree = SOURCE_ROOT; };
 		F01F8BFB198FA6FC00164FD2 /* XNGOAuthTokenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XNGOAuthTokenTests.m; path = Tests/XNGOAuthTokenTests.m; sourceTree = SOURCE_ROOT; };
 		F0EADDEB18BA520000BB8831 /* XNGOAuth1Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNGOAuth1Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EADDEE18BA520000BB8831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,9 +148,6 @@
 		F0EADE0D18BA520000BB8831 /* XNGOAuth1ClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				F01F8BF8198FA6FC00164FD2 /* NSDictionaryAdditionsTests.m */,
-				F01F8BF9198FA6FC00164FD2 /* XNGOAuth1RequestOperationManagerTests.m */,
-				F01F8BFA198FA6FC00164FD2 /* XNGOAuth1RequestSerializerTests.m */,
 				F01F8BFB198FA6FC00164FD2 /* XNGOAuthTokenTests.m */,
 				F0EADE0E18BA520000BB8831 /* Supporting Files */,
 			);
@@ -354,10 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F01F8C02198FA70100164FD2 /* XNGOAuth1RequestSerializerTests.m in Sources */,
 				F01F8C03198FA70100164FD2 /* XNGOAuthTokenTests.m in Sources */,
-				F01F8C00198FA70100164FD2 /* NSDictionaryAdditionsTests.m in Sources */,
-				F01F8C01198FA70100164FD2 /* XNGOAuth1RequestOperationManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
