@@ -35,8 +35,8 @@ NSString *const kAFOAuth1CredentialServiceName = @"AFOAuthCredentialService";
 
 static NSDictionary *AFKeychainQueryDictionaryWithIdentifier(NSString *identifier) {
     return @{(__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
-            (__bridge id)kSecAttrAccount: identifier,
-            (__bridge id)kSecAttrService: kAFOAuth1CredentialServiceName};
+             (__bridge id)kSecAttrAccount: identifier,
+             (__bridge id)kSecAttrService: kAFOAuth1CredentialServiceName};
 }
 
 - (id)initWithQueryString:(NSString *)queryString {
@@ -161,7 +161,7 @@ static NSDictionary *AFKeychainQueryDictionaryWithIdentifier(NSString *identifie
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:credential];
     mutableUpdateDictionary[(__bridge id)kSecValueData] = data;
     if (securityAccessibility) {
-        mutableUpdateDictionary[(__bridge id) kSecAttrAccessible] = securityAccessibility;
+        mutableUpdateDictionary[(__bridge id)kSecAttrAccessible] = securityAccessibility;
     }
 
     OSStatus status;

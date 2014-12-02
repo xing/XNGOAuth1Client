@@ -25,46 +25,46 @@
 ///---------------------
 
 /**
-Stores the specified OAuth token for a given web service identifier in the Keychain
-with the default Keychain Accessibility of kSecAttrAccessibleWhenUnlocked.
+   Stores the specified OAuth token for a given web service identifier in the Keychain
+   with the default Keychain Accessibility of kSecAttrAccessibleWhenUnlocked.
 
-@param token The OAuth credential to be stored.
-@param identifier The service identifier associated with the specified token.
+   @param token The OAuth credential to be stored.
+   @param identifier The service identifier associated with the specified token.
 
-@return Whether or not the credential was stored in the keychain.
-*/
+   @return Whether or not the credential was stored in the keychain.
+ */
 + (BOOL)storeCredential:(XNGOAuthToken *)credential
          withIdentifier:(NSString *)identifier;
 
 /**
-Stores the specified OAuth token for a given web service identifier in the Keychain.
+   Stores the specified OAuth token for a given web service identifier in the Keychain.
 
-@param token The OAuth credential to be stored.
-@param identifier The service identifier associated with the specified token.
-@param securityAccessibility The Keychain security accessibility to store the credential with.
+   @param token The OAuth credential to be stored.
+   @param identifier The service identifier associated with the specified token.
+   @param securityAccessibility The Keychain security accessibility to store the credential with.
 
-@return Whether or not the credential was stored in the keychain.
-*/
+   @return Whether or not the credential was stored in the keychain.
+ */
 + (BOOL)storeCredential:(XNGOAuthToken *)credential
          withIdentifier:(NSString *)identifier
       withAccessibility:(id)securityAccessibility;
 
 /**
-Retrieves the OAuth credential stored with the specified service identifier from the Keychain.
+   Retrieves the OAuth credential stored with the specified service identifier from the Keychain.
 
-@param identifier The service identifier associated with the specified credential.
+   @param identifier The service identifier associated with the specified credential.
 
-@return The retrieved OAuth token.
-*/
+   @return The retrieved OAuth token.
+ */
 + (XNGOAuthToken *)retrieveCredentialWithIdentifier:(NSString *)identifier;
 
 /**
-Deletes the OAuth token stored with the specified service identifier from the Keychain.
+   Deletes the OAuth token stored with the specified service identifier from the Keychain.
 
-@param identifier The service identifier associated with the specified token.
+   @param identifier The service identifier associated with the specified token.
 
-@return Whether or not the token was deleted from the keychain.
-*/
+   @return Whether or not the token was deleted from the keychain.
+ */
 + (BOOL)deleteCredentialWithIdentifier:(NSString *)identifier;
 
 #endif
