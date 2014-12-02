@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1119C873F7CC4AEB96835CD8 /* libPods-XNGOAuth1ClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089A462D0344CF18D9C7BF5 /* libPods-XNGOAuth1ClientTests.a */; };
+		1643ABC4068981D502BA6C3D /* XNGOAuth1ClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643ACAAB46C12698BC50635 /* XNGOAuth1ClientTests.m */; };
 		59C2773CB01545F29A5F4190 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DB09CFD34B46A3A6BE664D /* libPods.a */; };
 		F01F8BF1198FA51A00164FD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BEC198FA51A00164FD2 /* main.m */; };
 		F01F8BF2198FA51A00164FD2 /* XNGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BEE198FA51A00164FD2 /* XNGAppDelegate.m */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		114A2E010EC49EC839CA11EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1643ACAAB46C12698BC50635 /* XNGOAuth1ClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGOAuth1ClientTests.m; sourceTree = "<group>"; };
 		489E423E7B3F64F8FF4403BB /* Pods-XNGOAuth1ClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGOAuth1ClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XNGOAuth1ClientTests/Pods-XNGOAuth1ClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		52F4FD0C486A6AF272652212 /* Pods-XNGOAuth1ClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGOAuth1ClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XNGOAuth1ClientTests/Pods-XNGOAuth1ClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		5BB33E34DDA43DADA2558254 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		F0EADE0D18BA520000BB8831 /* XNGOAuth1ClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				1643ACAAB46C12698BC50635 /* XNGOAuth1ClientTests.m */,
 				F01F8BFB198FA6FC00164FD2 /* XNGOAuthTokenTests.m */,
 				F0EADE0E18BA520000BB8831 /* Supporting Files */,
 			);
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F01F8C03198FA70100164FD2 /* XNGOAuthTokenTests.m in Sources */,
+				1643ABC4068981D502BA6C3D /* XNGOAuth1ClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

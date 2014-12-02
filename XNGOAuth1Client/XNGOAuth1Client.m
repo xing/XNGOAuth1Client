@@ -31,8 +31,8 @@ static NSString *AFEncodeBase64WithData(NSData *data) {
         NSUInteger idx = (i / 3) * 4;
         output[idx + 0] = kAFBase64EncodingTable[(value >> 18) & 0x3F];
         output[idx + 1] = kAFBase64EncodingTable[(value >> 12) & 0x3F];
-        output[idx + 2] = (uint8_t) ((i + 1) < length ? kAFBase64EncodingTable[(value >> 6)  & 0x3F] : '=');
-        output[idx + 3] = (uint8_t) ((i + 2) < length ? kAFBase64EncodingTable[(value >> 0)  & 0x3F] : '=');
+        output[idx + 2] = (uint8_t)((i + 1) < length ? kAFBase64EncodingTable[(value >> 6)  & 0x3F] : '=');
+        output[idx + 3] = (uint8_t)((i + 2) < length ? kAFBase64EncodingTable[(value >> 0)  & 0x3F] : '=');
     }
 
     return [[NSString alloc] initWithData:mutableData encoding:NSASCIIStringEncoding];
@@ -90,50 +90,56 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
 
 @implementation XNGOAuth1Client
 
-- (id)initWithBaseURL:(NSURL *)url
-                  key:(NSString *)clientID
-               secret:(NSString *)secret {
-    self = [super init];
-    if (!self) {
-        return nil;
-    }
+- (instancetype)initWithBaseURL:(NSURL *)url {
+    self = [super initWithBaseURL:url];
+    if (self) {
+        self.url = url;
+        self.signatureMethod = AFHMACSHA1SignatureMethod;
+        self.oauthAccessMethod = @"GET";
+        self.defaultHeaders = [NSMutableDictionary dictionary];
+        self.parameterEncoding = AFFormURLParameterEncoding;
+        self.stringEncoding = NSUTF8StringEncoding;
+        self.responseSerializer = [AFHTTPResponseSerializer serializer];
 
-    self.url = url;
-    self.key = clientID;
-    self.secret = secret;
-    self.signatureMethod = AFHMACSHA1SignatureMethod;
-    self.oauthAccessMethod = @"GET";
-    self.defaultHeaders = [NSMutableDictionary dictionary];
-    self.parameterEncoding = AFFormURLParameterEncoding;
-    self.stringEncoding = NSUTF8StringEncoding;
-    self.responseSerializer = [AFHTTPResponseSerializer serializer];
+        // Accept-Language HTTP Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4
+        NSMutableArray *acceptLanguagesComponents = [NSMutableArray array];
+        [[NSLocale preferredLanguages] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            float q = 1.0f - (idx * 0.1f);
+            [acceptLanguagesComponents addObject:[NSString stringWithFormat:@"%@;q=%0.1g", obj, q]];
+            *stop = q <= 0.5f;
+        }];
+        [self setDefaultHeader:@"Accept-Language" value:[acceptLanguagesComponents componentsJoinedByString:@", "]];
 
-    // Accept-Language HTTP Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4
-    NSMutableArray *acceptLanguagesComponents = [NSMutableArray array];
-    [[NSLocale preferredLanguages] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        float q = 1.0f - (idx * 0.1f);
-        [acceptLanguagesComponents addObject:[NSString stringWithFormat:@"%@;q=%0.1g", obj, q]];
-        *stop = q <= 0.5f;
-    }];
-    [self setDefaultHeader:@"Accept-Language" value:[acceptLanguagesComponents componentsJoinedByString:@", "]];
-
-    NSString *userAgent = nil;
+        NSString *userAgent = nil;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
-    // User-Agent Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.43
-    userAgent = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", [[NSBundle mainBundle] infoDictionary][(__bridge NSString *) kCFBundleExecutableKey] ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleIdentifierKey], (__bridge id)CFBundleGetValueForInfoDictionaryKey(CFBundleGetMainBundle(), kCFBundleVersionKey) ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0f)];
+        // User-Agent Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.43
+        userAgent = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey] ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleIdentifierKey], (__bridge id)CFBundleGetValueForInfoDictionaryKey(CFBundleGetMainBundle(), kCFBundleVersionKey) ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0f)];
 #elif defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
-    userAgent = [NSString stringWithFormat:@"%@/%@ (Mac OS X %@)", [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleExecutableKey] ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleIdentifierKey], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleVersionKey], [[NSProcessInfo processInfo] operatingSystemVersionString]];
+        userAgent = [NSString stringWithFormat:@"%@/%@ (Mac OS X %@)", [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleExecutableKey] ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleIdentifierKey], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleVersionKey], [[NSProcessInfo processInfo] operatingSystemVersionString]];
 #endif
 #pragma clang diagnostic pop
-    if (userAgent) {
-        if (![userAgent canBeConvertedToEncoding:NSASCIIStringEncoding]) {
-            NSMutableString *mutableUserAgent = [userAgent mutableCopy];
-            CFStringTransform((__bridge CFMutableStringRef)(mutableUserAgent), NULL, kCFStringTransformToLatin, false);
-            userAgent = mutableUserAgent;
+        if (userAgent) {
+            if (![userAgent canBeConvertedToEncoding:NSASCIIStringEncoding]) {
+                NSMutableString *mutableUserAgent = [userAgent mutableCopy];
+                CFStringTransform((__bridge CFMutableStringRef)(mutableUserAgent), NULL, kCFStringTransformToLatin, false);
+                userAgent = mutableUserAgent;
+            }
+            [self setDefaultHeader:@"User-Agent" value:userAgent];
         }
-        [self setDefaultHeader:@"User-Agent" value:userAgent];
+    }
+
+    return self;
+}
+
+- (instancetype)initWithBaseURL:(NSURL *)url
+                            key:(NSString *)clientID
+                         secret:(NSString *)secret {
+    self = [self initWithBaseURL:url];
+    if (self) {
+        self.key = clientID;
+        self.secret = secret;
     }
 
     return self;
@@ -395,7 +401,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
                     [request setValue:[NSString stringWithFormat:@"application/x-www-form-urlencoded; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
                     [request setHTTPBody:[[XNGOAuth1Client queryStringFromParameters:parameters encoding:self.stringEncoding] dataUsingEncoding:self.stringEncoding]];
                     break;
-                case AFJSONParameterEncoding :
+                case AFJSONParameterEncoding:
                     [request setValue:[NSString stringWithFormat:@"application/json; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
                     [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:(NSJSONWritingOptions)0 error:&error]];
                     break;
@@ -466,7 +472,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
 
     self.key = [decoder decodeObjectForKey:NSStringFromSelector(@selector(key))];
     self.secret = [decoder decodeObjectForKey:NSStringFromSelector(@selector(secret))];
-    self.signatureMethod = (AFOAuthSignatureMethod)[decoder decodeIntegerForKey:NSStringFromSelector(@selector(signatureMethod))];
+    self.signatureMethod = (AFOAuthSignatureMethod)[decoder decodeIntegerForKey : NSStringFromSelector(@selector(signatureMethod))];
     self.realm = [decoder decodeObjectForKey:NSStringFromSelector(@selector(realm))];
     self.accessToken = [decoder decodeObjectForKey:NSStringFromSelector(@selector(accessToken))];
     self.oauthAccessMethod = [decoder decodeObjectForKey:NSStringFromSelector(@selector(oauthAccessMethod))];
@@ -490,9 +496,9 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    XNGOAuth1Client *copy = [(XNGOAuth1Client *)[[self class] allocWithZone:zone] initWithBaseURL:self.url
-                                                                                              key:self.key
-                                                                                           secret:self.secret];
+    XNGOAuth1Client *copy = [(XNGOAuth1Client *)[[self class] allocWithZone:zone] initWithBaseURL : self.url
+                             key : self.key
+                             secret : self.secret];
     copy.signatureMethod = self.signatureMethod;
     copy.realm = self.realm;
     copy.accessToken = self.accessToken;
