@@ -218,15 +218,6 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
     }
 }
 
-+ (NSString *)queryStringFromParameters:(NSDictionary *)parameters encoding:(NSStringEncoding)stringEncoding {
-    NSMutableArray *entries = [NSMutableArray array];
-    [parameters enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        NSString *entry = [NSString stringWithFormat:@"%@=%@", AFPercentEscapedQueryStringPairMemberFromStringWithEncoding(key, stringEncoding), AFPercentEscapedQueryStringPairMemberFromStringWithEncoding(obj, stringEncoding)];
-        [entries addObject:entry];
-    }];
-    return [entries componentsJoinedByString:@"&"];
-}
-
 - (NSString *)authorizationHeaderForMethod:(NSString *)method
                                       path:(NSString *)path
                                 parameters:(NSDictionary *)parameters {
@@ -250,16 +241,15 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
 
     [mutableParameters addEntriesFromDictionary:mutableAuthorizationParameters];
     mutableAuthorizationParameters[@"oauth_signature"] = [self OAuthSignatureForMethod:method path:path parameters:mutableParameters token:self.accessToken];
-    NSArray *sortedComponents = [[[XNGOAuth1Client queryStringFromParameters:mutableAuthorizationParameters encoding:self.stringEncoding] componentsSeparatedByString:@"&"] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    NSArray *sortedComponents = [mutableAuthorizationParameters.allKeys sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     NSMutableArray *mutableComponents = [NSMutableArray array];
-    for (NSString *component in sortedComponents) {
-        NSArray *subcomponents = [component componentsSeparatedByString:@"="];
-        if ([subcomponents count] == 2) {
-            [mutableComponents addObject:[NSString stringWithFormat:@"%@=\"%@\"", subcomponents[0], subcomponents[1]]];
-        }
+    for (NSString *key in sortedComponents) {
+        NSString *value = AFPercentEscapedQueryStringPairMemberFromStringWithEncoding(mutableAuthorizationParameters[key], NSASCIIStringEncoding);
+        [mutableComponents addObject:[NSString stringWithFormat:@"%@=\"%@\"", key, value]];
     }
 
-    return [NSString stringWithFormat:kAFOAuth1AuthorizationFormatString, [mutableComponents componentsJoinedByString:@", "]];
+    NSString *authorizationHeader = [NSString stringWithFormat:kAFOAuth1AuthorizationFormatString, [mutableComponents componentsJoinedByString:@", "]];
+    return authorizationHeader;
 }
 
 #pragma mark -
@@ -405,40 +395,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
     }
 
     NSURL *url = [NSURL URLWithString:path relativeToURL:self.url];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    [request setHTTPMethod:method];
-    [request setAllHTTPHeaderFields:self.defaultHeaders];
-
-    if (parameters) {
-        if ([method isEqualToString:@"GET"] || [method isEqualToString:@"HEAD"] || [method isEqualToString:@"DELETE"]) {
-            url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:[path rangeOfString:@"?"].location == NSNotFound ? @"?%@":@"&%@", [XNGOAuth1Client queryStringFromParameters:parameters encoding:self.stringEncoding]]];
-            [request setURL:url];
-        } else {
-            NSString *charset = (__bridge NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(self.stringEncoding));
-            NSError *error = nil;
-
-            switch (self.parameterEncoding) {
-                case AFFormURLParameterEncoding :
-                    [request setValue:[NSString stringWithFormat:@"application/x-www-form-urlencoded; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
-                    [request setHTTPBody:[[XNGOAuth1Client queryStringFromParameters:parameters encoding:self.stringEncoding] dataUsingEncoding:self.stringEncoding]];
-                    break;
-                case AFJSONParameterEncoding:
-                    [request setValue:[NSString stringWithFormat:@"application/json; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
-                    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:(NSJSONWritingOptions)0 error:&error]];
-                    break;
-                case AFPropertyListParameterEncoding:
-                    [request setValue:[NSString stringWithFormat:@"application/x-plist; charset=%@", charset] forHTTPHeaderField:@"Content-Type"];
-                    [request setHTTPBody:[NSPropertyListSerialization dataWithPropertyList:parameters format:NSPropertyListXMLFormat_v1_0 options:0 error:&error]];
-                    break;
-            }
-
-            if (error) {
-                NSLog(@"%@ %@: %@", [self class], NSStringFromSelector(_cmd), error);
-            }
-        }
-    }
-
-    return request;
+    return [self.requestSerializer requestWithMethod:method URLString:url.absoluteString parameters:parameters error:nil];
 }
 
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method

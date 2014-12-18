@@ -56,8 +56,6 @@ typedef void (^AFServiceProviderRequestCompletionBlock)();
 @property (nonatomic) NSMutableDictionary *defaultHeaders;
 @property (nonatomic) NSStringEncoding stringEncoding;
 
-+ (NSString *)queryStringFromParameters:(NSDictionary *)parameters encoding:(NSStringEncoding)stringEncoding;
-
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters;
 
 #pragma mark - Initialization
