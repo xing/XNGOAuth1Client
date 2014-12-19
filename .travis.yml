@@ -4,4 +4,4 @@ cache: bundler
 podfile: Example/Podfile
 env: OS=8.1
 script: script/test.sh
-after_success: slather
+after_success: bundle exec slather
