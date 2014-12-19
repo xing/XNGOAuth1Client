@@ -1,1 +1,1 @@
-xcodebuild -workspace XNGOAuth1Client.xcworkspace -scheme 'XNGOAuth1Client' -destination platform='iOS Simulator',OS=$OS,name='iPhone 5s' clean build test -sdk iphonesimulator | xcpretty -tc; exit ${PIPESTATUS[0]}
+xcodebuild -workspace XNGOAuth1Client.xcworkspace -scheme 'XNGOAuth1Client' clean build test -sdk iphonesimulator | xcpretty -tc; exit ${PIPESTATUS[0]}
