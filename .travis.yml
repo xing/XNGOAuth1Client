@@ -1,9 +1,7 @@
 language: objective-c
 osx_image: xcode61
 cache: bundler
+podfile: Example/Podfile
 env: OS=8.1
-before_install:
-  - bundle install
-  - cd Example && bundle exec pod install && cd ..
 script: script/test.sh
 after_success: slather
