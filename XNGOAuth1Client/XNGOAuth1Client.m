@@ -85,7 +85,7 @@ static inline NSString *NSStringFromAFOAuthSignatureMethod(AFOAuthSignatureMetho
     }
 }
 
-static inline NSString *AFPlainTextSignature(NSURLRequest *request, NSString *consumerSecret, NSString *tokenSecret, NSStringEncoding stringEncoding) {
+static inline NSString *AFPlainTextSignature(NSString *consumerSecret, NSString *tokenSecret) {
     NSString *secret = tokenSecret ? tokenSecret : @"";
     NSString *signature = [NSString stringWithFormat:@"%@&%@", consumerSecret, secret];
     return signature;
@@ -210,7 +210,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
 
     switch (self.signatureMethod) {
         case AFPlainTextSignatureMethod :
-            return AFPlainTextSignature(request, self.secret, tokenSecret, self.stringEncoding);
+            return AFPlainTextSignature(self.secret, tokenSecret);
         case AFHMACSHA1SignatureMethod :
             return AFHMACSHA1Signature(request, self.secret, tokenSecret, self.stringEncoding);
         default :
