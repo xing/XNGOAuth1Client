@@ -270,7 +270,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
 
                 currentRequestToken.verifier = [[XNGOAuthToken parametersFromQueryString:[url query]] valueForKey:@"oauth_verifier"];
 
-                [self acquireOAuthAccessTokenWithPath:accessTokenPath requestToken:currentRequestToken accessMethod:accessMethod success:^(XNGOAuthToken *accessToken, id responseObject) {
+                [self acquireOAuthAccessTokenWithPath:accessTokenPath requestToken:currentRequestToken accessMethod:accessMethod success:^(XNGOAuthToken *accessToken, id secondResponseObject) {
                         if (self.serviceProviderRequestCompletion) {
                             self.serviceProviderRequestCompletion();
                         }
@@ -280,7 +280,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
                             self.accessToken = accessToken;
 
                             if (success) {
-                                success(accessToken, responseObject);
+                                success(accessToken, secondResponseObject);
                             }
                         } else {
                             if (failure) {
@@ -329,7 +329,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
     }
 
     NSMutableURLRequest *request = [self requestWithMethod:accessMethod path:path parameters:parameters];
-    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    AFHTTPRequestOperation *requestOperation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             XNGOAuthToken *accessToken = [[XNGOAuthToken alloc] initWithQueryString:operation.responseString];
             success(accessToken, responseObject);
@@ -340,7 +340,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
         }
     }];
 
-    [self.operationQueue addOperation:operation];
+    [self.operationQueue addOperation:requestOperation];
 }
 
 - (void)acquireOAuthAccessTokenWithPath:(NSString *)path
@@ -356,7 +356,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
         parameters[@"oauth_verifier"] = requestToken.verifier;
 
         NSMutableURLRequest *request = [self requestWithMethod:accessMethod path:path parameters:parameters];
-        AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        AFHTTPRequestOperation *requestOperation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
             if (success) {
                 XNGOAuthToken *accessToken = [[XNGOAuthToken alloc] initWithQueryString:operation.responseString];
                 success(accessToken, responseObject);
@@ -367,7 +367,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
             }
         }];
 
-        [self.operationQueue addOperation:operation];
+        [self.operationQueue addOperation:requestOperation];
     } else {
         NSDictionary *userInfo = @{NSLocalizedFailureReasonErrorKey : NSLocalizedStringFromTable(@"Bad OAuth response received from the server.", @"AFNetworking", nil)};
         NSError *error = [[NSError alloc] initWithDomain:NSURLErrorDomain code:NSURLErrorBadServerResponse userInfo:userInfo];
