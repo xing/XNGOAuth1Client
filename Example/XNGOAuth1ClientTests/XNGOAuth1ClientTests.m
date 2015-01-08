@@ -81,4 +81,20 @@
     [self waitForExpectationsWithTimeout:0.5 handler:nil];
 }
 
+- (void)testSettingDifferentUserAgent {
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.xing.com"];
+    XNGOAuth1Client *classUnderTest = [[XNGOAuth1Client alloc] initWithBaseURL:baseURL key:@"some_key" secret:@"some_secret"];
+    classUnderTest.defaultHeaders[@"User-Agent"] = @"XNGOAuth1Client/1.0 SomeOtherValue/4.0";
+    NSMutableURLRequest *request = [classUnderTest requestWithMethod:@"GET" path:@"/some_path" parameters:nil];
+    expect(request.allHTTPHeaderFields[@"User-Agent"]).to.equal(@"XNGOAuth1Client/1.0 SomeOtherValue/4.0");
+}
+
+- (void)testSettingExtraordinaryDefaultHeader {
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.xing.com"];
+    XNGOAuth1Client *classUnderTest = [[XNGOAuth1Client alloc] initWithBaseURL:baseURL key:@"some_key" secret:@"some_secret"];
+    classUnderTest.defaultHeaders[@"ExtraOrdinaryHeader"] = @"This is amazing. 7 HTTP HeaderFields you wouldn't believe exist.";
+    NSMutableURLRequest *request = [classUnderTest requestWithMethod:@"GET" path:@"/some_path" parameters:nil];
+    expect(request.allHTTPHeaderFields[@"ExtraOrdinaryHeader"]).to.equal(@"This is amazing. 7 HTTP HeaderFields you wouldn't believe exist.");
+}
+
 @end

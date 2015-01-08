@@ -395,6 +395,10 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
     }
 
     NSURL *url = [NSURL URLWithString:path relativeToURL:self.url];
+    for (NSString *key in self.defaultHeaders.allKeys) {
+        id value = (self.defaultHeaders)[key];
+        [self.requestSerializer setValue:value forHTTPHeaderField:key];
+    }
     return [self.requestSerializer requestWithMethod:method URLString:url.absoluteString parameters:parameters error:nil];
 }
 
