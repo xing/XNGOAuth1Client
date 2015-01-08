@@ -85,7 +85,7 @@ static inline NSString *NSStringFromAFOAuthSignatureMethod(AFOAuthSignatureMetho
     }
 }
 
-static inline NSString *AFPlainTextSignature(NSURLRequest *request, NSString *consumerSecret, NSString *tokenSecret, NSStringEncoding stringEncoding) {
+static inline NSString *AFPlainTextSignature(NSString *consumerSecret, NSString *tokenSecret) {
     NSString *secret = tokenSecret ? tokenSecret : @"";
     NSString *signature = [NSString stringWithFormat:@"%@&%@", consumerSecret, secret];
     return signature;
@@ -136,7 +136,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
 #pragma clang diagnostic ignored "-Wgnu"
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
         // User-Agent Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.43
-        userAgent = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey] ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleIdentifierKey], (__bridge id)CFBundleGetValueForInfoDictionaryKey(CFBundleGetMainBundle(), kCFBundleVersionKey) ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0f)];
+        userAgent = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", [[NSBundle mainBundle] infoDictionary][(__bridge NSString *) kCFBundleExecutableKey] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *) kCFBundleIdentifierKey], (__bridge id) CFBundleGetValueForInfoDictionaryKey(CFBundleGetMainBundle(), kCFBundleVersionKey) ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *) kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0f)];
 #elif defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
         userAgent = [NSString stringWithFormat:@"%@/%@ (Mac OS X %@)", [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleExecutableKey] ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleIdentifierKey], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] ? :[[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleVersionKey], [[NSProcessInfo processInfo] operatingSystemVersionString]];
 #endif
@@ -210,7 +210,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
 
     switch (self.signatureMethod) {
         case AFPlainTextSignatureMethod :
-            return AFPlainTextSignature(request, self.secret, tokenSecret, self.stringEncoding);
+            return AFPlainTextSignature(self.secret, tokenSecret);
         case AFHMACSHA1SignatureMethod :
             return AFHMACSHA1Signature(request, self.secret, tokenSecret, self.stringEncoding);
         default :
@@ -262,15 +262,15 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
                                           scope:(NSString *)scope
                                         success:(void (^)(XNGOAuthToken *accessToken, id responseObject))success
                                         failure:(void (^)(NSError *error))failure {
-    [self acquireOAuthRequestTokenWithPath:requestTokenPath callbackURL:callbackURL accessMethod:(NSString *)accessMethod scope:scope success:^(XNGOAuthToken *requestToken, id responseObject) {
+    [self acquireOAuthRequestTokenWithPath:requestTokenPath callbackURL:callbackURL accessMethod:accessMethod scope:scope success:^(XNGOAuthToken *requestToken, id responseObject) {
         __block XNGOAuthToken *currentRequestToken = requestToken;
 
-        self.applicationLaunchNotificationObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"kAFApplicationLaunchedWithURLNotification" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notification) {
+        self.applicationLaunchNotificationObserver = [[NSNotificationCenter defaultCenter] addObserverForName:kAFApplicationLaunchedWithURLNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notification) {
                 NSURL *url = [[notification userInfo] valueForKey:kAFApplicationLaunchOptionsURLKey];
 
                 currentRequestToken.verifier = [[XNGOAuthToken parametersFromQueryString:[url query]] valueForKey:@"oauth_verifier"];
 
-                [self acquireOAuthAccessTokenWithPath:accessTokenPath requestToken:currentRequestToken accessMethod:accessMethod success:^(XNGOAuthToken *accessToken, id responseObject) {
+                [self acquireOAuthAccessTokenWithPath:accessTokenPath requestToken:currentRequestToken accessMethod:accessMethod success:^(XNGOAuthToken *accessToken, id secondResponseObject) {
                         if (self.serviceProviderRequestCompletion) {
                             self.serviceProviderRequestCompletion();
                         }
@@ -280,7 +280,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
                             self.accessToken = accessToken;
 
                             if (success) {
-                                success(accessToken, responseObject);
+                                success(accessToken, secondResponseObject);
                             }
                         } else {
                             if (failure) {
@@ -329,7 +329,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
     }
 
     NSMutableURLRequest *request = [self requestWithMethod:accessMethod path:path parameters:parameters];
-    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    AFHTTPRequestOperation *requestOperation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             XNGOAuthToken *accessToken = [[XNGOAuthToken alloc] initWithQueryString:operation.responseString];
             success(accessToken, responseObject);
@@ -340,7 +340,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
         }
     }];
 
-    [self.operationQueue addOperation:operation];
+    [self.operationQueue addOperation:requestOperation];
 }
 
 - (void)acquireOAuthAccessTokenWithPath:(NSString *)path
@@ -356,7 +356,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
         parameters[@"oauth_verifier"] = requestToken.verifier;
 
         NSMutableURLRequest *request = [self requestWithMethod:accessMethod path:path parameters:parameters];
-        AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        AFHTTPRequestOperation *requestOperation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
             if (success) {
                 XNGOAuthToken *accessToken = [[XNGOAuthToken alloc] initWithQueryString:operation.responseString];
                 success(accessToken, responseObject);
@@ -367,7 +367,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
             }
         }];
 
-        [self.operationQueue addOperation:operation];
+        [self.operationQueue addOperation:requestOperation];
     } else {
         NSDictionary *userInfo = @{NSLocalizedFailureReasonErrorKey : NSLocalizedStringFromTable(@"Bad OAuth response received from the server.", @"AFNetworking", nil)};
         NSError *error = [[NSError alloc] initWithDomain:NSURLErrorDomain code:NSURLErrorBadServerResponse userInfo:userInfo];
