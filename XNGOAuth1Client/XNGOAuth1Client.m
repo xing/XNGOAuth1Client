@@ -265,7 +265,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
     [self acquireOAuthRequestTokenWithPath:requestTokenPath callbackURL:callbackURL accessMethod:(NSString *)accessMethod scope:scope success:^(XNGOAuthToken *requestToken, id responseObject) {
         __block XNGOAuthToken *currentRequestToken = requestToken;
 
-        self.applicationLaunchNotificationObserver = [[NSNotificationCenter defaultCenter] addObserverForName:@"kAFApplicationLaunchedWithURLNotification" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notification) {
+        self.applicationLaunchNotificationObserver = [[NSNotificationCenter defaultCenter] addObserverForName:kAFApplicationLaunchedWithURLNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notification) {
                 NSURL *url = [[notification userInfo] valueForKey:kAFApplicationLaunchOptionsURLKey];
 
                 currentRequestToken.verifier = [[XNGOAuthToken parametersFromQueryString:[url query]] valueForKey:@"oauth_verifier"];
