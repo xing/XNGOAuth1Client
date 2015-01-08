@@ -262,7 +262,7 @@ static inline NSString *AFHMACSHA1Signature(NSURLRequest *request, NSString *con
                                           scope:(NSString *)scope
                                         success:(void (^)(XNGOAuthToken *accessToken, id responseObject))success
                                         failure:(void (^)(NSError *error))failure {
-    [self acquireOAuthRequestTokenWithPath:requestTokenPath callbackURL:callbackURL accessMethod:(NSString *)accessMethod scope:scope success:^(XNGOAuthToken *requestToken, id responseObject) {
+    [self acquireOAuthRequestTokenWithPath:requestTokenPath callbackURL:callbackURL accessMethod:accessMethod scope:scope success:^(XNGOAuthToken *requestToken, id responseObject) {
         __block XNGOAuthToken *currentRequestToken = requestToken;
 
         self.applicationLaunchNotificationObserver = [[NSNotificationCenter defaultCenter] addObserverForName:kAFApplicationLaunchedWithURLNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notification) {
