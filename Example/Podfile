@@ -1,16 +1,9 @@
 platform :ios, '6.1'
 workspace '../XNGOAuth1Client'
 
-pod 'XNGOAuth1Client', :path => '../XNGOAuth1Client.podspec'
+pod 'XNGOAuth1Client', path: '../XNGOAuth1Client.podspec'
 
-target 'XNGOAuth1ClientTests', :exclusive => true do
+target 'XNGOAuth1ClientTests' do
   pod 'Expecta',     '~> 0.2.3'
   pod 'OHHTTPStubs', '~> 3.1.0'
-end
-
-begin
-  require 'slather'
-  Slather.prepare_pods(self)
-rescue LoadError
-  puts 'Slather has been disabled (not installed).'
 end
