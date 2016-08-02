@@ -1,4 +1,6 @@
 coverage_service: coveralls
+ci_service: travis_ci
+build_directory: build
 xcodeproj: Example/XNGOAuth1Client.xcodeproj
 source_directory: XNGOAuth1Client
 ignore:

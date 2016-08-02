@@ -4,4 +4,7 @@ cache: bundler
 podfile: Example/Podfile
 env: OS=8.1
 script: script/test.sh
+before_install:
+    - bundle install
+    - bundle exec pod install --repo-update
 after_success: bundle exec slather
