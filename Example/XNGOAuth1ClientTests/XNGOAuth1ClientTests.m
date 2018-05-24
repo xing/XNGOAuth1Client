@@ -27,7 +27,7 @@
     expect(classUnderTest.parameterEncoding).to.equal(AFFormURLParameterEncoding);
     expect(classUnderTest.stringEncoding).to.equal(NSUTF8StringEncoding);
     expect(classUnderTest.responseSerializer).to.beKindOf(AFHTTPResponseSerializer.class);
-    expect(classUnderTest.defaultHeaders[@"User-Agent"]).to.equal(@"XNGOAuth1Client/1.0 (iPhone; iOS 11.3; Scale/2.00)");
+    expect(classUnderTest.defaultHeaders[@"User-Agent"]).to.equal(@"XNGOAuth1ClientExample/1.0 (iPhone; iOS 11.3; Scale/2.00)");
     expect(classUnderTest.defaultHeaders[@"Accept-Language"]).to.equal(@"en;q=1");
 }
 
@@ -42,7 +42,7 @@
     expect(classUnderTest.parameterEncoding).to.equal(AFFormURLParameterEncoding);
     expect(classUnderTest.stringEncoding).to.equal(NSUTF8StringEncoding);
     expect(classUnderTest.responseSerializer).to.beKindOf(AFHTTPResponseSerializer.class);
-    expect(classUnderTest.defaultHeaders[@"User-Agent"]).to.equal(@"XNGOAuth1Client/1.0 (iPhone; iOS 11.3; Scale/2.00)");
+    expect(classUnderTest.defaultHeaders[@"User-Agent"]).to.equal(@"XNGOAuth1ClientExample/1.0 (iPhone; iOS 11.3; Scale/2.00)");
     expect(classUnderTest.defaultHeaders[@"Accept-Language"]).to.equal(@"en;q=1");
     expect(classUnderTest.key).to.equal(@"some_key");
     expect(classUnderTest.secret).to.equal(@"some_secret");

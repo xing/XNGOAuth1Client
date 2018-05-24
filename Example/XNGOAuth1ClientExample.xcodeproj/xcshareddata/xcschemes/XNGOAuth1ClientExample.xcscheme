@@ -15,18 +15,18 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F0EADDEA18BA520000BB8831"
-               BuildableName = "XNGOAuth1Client.app"
-               BlueprintName = "XNGOAuth1Client"
-               ReferencedContainer = "container:XNGOAuth1Client.xcodeproj">
+               BuildableName = "XNGOAuth1ClientExample.app"
+               BlueprintName = "XNGOAuth1ClientExample"
+               ReferencedContainer = "container:XNGOAuth1ClientExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "F0EADE0518BA520000BB8831"
                BuildableName = "XNGOAuth1ClientTests.xctest"
                BlueprintName = "XNGOAuth1ClientTests"
-               ReferencedContainer = "container:XNGOAuth1Client.xcodeproj">
+               ReferencedContainer = "container:XNGOAuth1ClientExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,46 +43,51 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F0EADDEA18BA520000BB8831"
-            BuildableName = "XNGOAuth1Client.app"
-            BlueprintName = "XNGOAuth1Client"
-            ReferencedContainer = "container:XNGOAuth1Client.xcodeproj">
+            BuildableName = "XNGOAuth1ClientExample.app"
+            BlueprintName = "XNGOAuth1ClientExample"
+            ReferencedContainer = "container:XNGOAuth1ClientExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F0EADDEA18BA520000BB8831"
-            BuildableName = "XNGOAuth1Client.app"
-            BlueprintName = "XNGOAuth1Client"
-            ReferencedContainer = "container:XNGOAuth1Client.xcodeproj">
+            BuildableName = "XNGOAuth1ClientExample.app"
+            BlueprintName = "XNGOAuth1ClientExample"
+            ReferencedContainer = "container:XNGOAuth1ClientExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F0EADDEA18BA520000BB8831"
-            BuildableName = "XNGOAuth1Client.app"
-            BlueprintName = "XNGOAuth1Client"
-            ReferencedContainer = "container:XNGOAuth1Client.xcodeproj">
+            BuildableName = "XNGOAuth1ClientExample.app"
+            BlueprintName = "XNGOAuth1ClientExample"
+            ReferencedContainer = "container:XNGOAuth1ClientExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
