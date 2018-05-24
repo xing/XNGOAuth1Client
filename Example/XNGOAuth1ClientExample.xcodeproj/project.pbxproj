@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1119C873F7CC4AEB96835CD8 /* libPods-XNGOAuth1ClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7089A462D0344CF18D9C7BF5 /* libPods-XNGOAuth1ClientTests.a */; };
+		00D5C655ED1704130952F7FF /* libPods-XNGOAuth1ClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA82F3502A28155E4FABFEC2 /* libPods-XNGOAuth1ClientTests.a */; };
 		1643ABC4068981D502BA6C3D /* XNGOAuth1ClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643ACAAB46C12698BC50635 /* XNGOAuth1ClientTests.m */; };
-		59C2773CB01545F29A5F4190 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DB09CFD34B46A3A6BE664D /* libPods.a */; };
 		F01F8BF1198FA51A00164FD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BEC198FA51A00164FD2 /* main.m */; };
 		F01F8BF2198FA51A00164FD2 /* XNGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BEE198FA51A00164FD2 /* XNGAppDelegate.m */; };
 		F01F8C03198FA70100164FD2 /* XNGOAuthTokenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F8BFB198FA6FC00164FD2 /* XNGOAuthTokenTests.m */; };
@@ -19,6 +18,7 @@
 		F0EADE0818BA520000BB8831 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADE0718BA520000BB8831 /* XCTest.framework */; };
 		F0EADE0918BA520000BB8831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDEE18BA520000BB8831 /* Foundation.framework */; };
 		F0EADE0A18BA520000BB8831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EADDF218BA520000BB8831 /* UIKit.framework */; };
+		F8A7FC7AB3B8A8D92443D655 /* libPods-XNGOAuth1ClientExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A806798F2CB3FA4AD4ECAB2 /* libPods-XNGOAuth1ClientExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,26 +46,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		114A2E010EC49EC839CA11EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1643ACAAB46C12698BC50635 /* XNGOAuth1ClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGOAuth1ClientTests.m; sourceTree = "<group>"; };
-		489E423E7B3F64F8FF4403BB /* Pods-XNGOAuth1ClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGOAuth1ClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XNGOAuth1ClientTests/Pods-XNGOAuth1ClientTests.debug.xcconfig"; sourceTree = "<group>"; };
-		52F4FD0C486A6AF272652212 /* Pods-XNGOAuth1ClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGOAuth1ClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XNGOAuth1ClientTests/Pods-XNGOAuth1ClientTests.release.xcconfig"; sourceTree = "<group>"; };
-		5BB33E34DDA43DADA2558254 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		7089A462D0344CF18D9C7BF5 /* libPods-XNGOAuth1ClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XNGOAuth1ClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8DB09CFD34B46A3A6BE664D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3C8C3C32B1A88FE2A62828 /* Pods-XNGOAuth1ClientExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGOAuth1ClientExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-XNGOAuth1ClientExample/Pods-XNGOAuth1ClientExample.release.xcconfig"; sourceTree = "<group>"; };
+		9A806798F2CB3FA4AD4ECAB2 /* libPods-XNGOAuth1ClientExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XNGOAuth1ClientExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7FDC4D7DF7E8C58A4B238B7 /* Pods-XNGOAuth1ClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGOAuth1ClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XNGOAuth1ClientTests/Pods-XNGOAuth1ClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA82F3502A28155E4FABFEC2 /* libPods-XNGOAuth1ClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XNGOAuth1ClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDEC050E473DD9E4D7AC6FBE /* Pods-XNGOAuth1ClientExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGOAuth1ClientExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XNGOAuth1ClientExample/Pods-XNGOAuth1ClientExample.debug.xcconfig"; sourceTree = "<group>"; };
 		F01F8BEC198FA51A00164FD2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		F01F8BED198FA51A00164FD2 /* XNGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNGAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		F01F8BEE198FA51A00164FD2 /* XNGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		F01F8BEF198FA51A00164FD2 /* XNGOAuth1Client-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "XNGOAuth1Client-Info.plist"; sourceTree = SOURCE_ROOT; };
-		F01F8BF0198FA51A00164FD2 /* XNGOAuth1Client-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XNGOAuth1Client-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		F01F8BEF198FA51A00164FD2 /* XNGOAuth1ClientExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "XNGOAuth1ClientExample-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F01F8BF0198FA51A00164FD2 /* XNGOAuth1ClientExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XNGOAuth1ClientExample-Prefix.pch"; sourceTree = "<group>"; };
 		F01F8BFB198FA6FC00164FD2 /* XNGOAuthTokenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XNGOAuthTokenTests.m; path = Tests/XNGOAuthTokenTests.m; sourceTree = SOURCE_ROOT; };
-		F0EADDEB18BA520000BB8831 /* XNGOAuth1Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNGOAuth1Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0EADDEB18BA520000BB8831 /* XNGOAuth1ClientExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNGOAuth1ClientExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EADDEE18BA520000BB8831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0EADDF018BA520000BB8831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F0EADDF218BA520000BB8831 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F0EADE0618BA520000BB8831 /* XNGOAuth1ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XNGOAuth1ClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EADE0718BA520000BB8831 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F0EADE0F18BA520000BB8831 /* XNGOAuth1ClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XNGOAuth1ClientTests-Info.plist"; sourceTree = "<group>"; };
+		F6EE9852352A00BC9B648460 /* Pods-XNGOAuth1ClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGOAuth1ClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XNGOAuth1ClientTests/Pods-XNGOAuth1ClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 				F0EADDF118BA520000BB8831 /* CoreGraphics.framework in Frameworks */,
 				F0EADDF318BA520000BB8831 /* UIKit.framework in Frameworks */,
 				F0EADDEF18BA520000BB8831 /* Foundation.framework in Frameworks */,
-				59C2773CB01545F29A5F4190 /* libPods.a in Frameworks */,
+				F8A7FC7AB3B8A8D92443D655 /* libPods-XNGOAuth1ClientExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +87,7 @@
 				F0EADE0818BA520000BB8831 /* XCTest.framework in Frameworks */,
 				F0EADE0A18BA520000BB8831 /* UIKit.framework in Frameworks */,
 				F0EADE0918BA520000BB8831 /* Foundation.framework in Frameworks */,
-				1119C873F7CC4AEB96835CD8 /* libPods-XNGOAuth1ClientTests.a in Frameworks */,
+				00D5C655ED1704130952F7FF /* libPods-XNGOAuth1ClientTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,18 +97,18 @@
 		F0EADDE218BA520000BB8831 = {
 			isa = PBXGroup;
 			children = (
-				F0EADDF418BA520000BB8831 /* XNGOAuth1Client */,
+				F0EADDF418BA520000BB8831 /* XNGOAuth1ClientExample */,
 				F0EADE0D18BA520000BB8831 /* XNGOAuth1ClientTests */,
 				F0EADDED18BA520000BB8831 /* Frameworks */,
 				F0EADDEC18BA520000BB8831 /* Products */,
-				F6C8EAB84E07BC0F2FF2370B /* Pods */,
+				F8DD040204EE915C6314DF0E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		F0EADDEC18BA520000BB8831 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F0EADDEB18BA520000BB8831 /* XNGOAuth1Client.app */,
+				F0EADDEB18BA520000BB8831 /* XNGOAuth1ClientExample.app */,
 				F0EADE0618BA520000BB8831 /* XNGOAuth1ClientTests.xctest */,
 			);
 			name = Products;
@@ -121,18 +121,18 @@
 				F0EADDF018BA520000BB8831 /* CoreGraphics.framework */,
 				F0EADDF218BA520000BB8831 /* UIKit.framework */,
 				F0EADE0718BA520000BB8831 /* XCTest.framework */,
-				E8DB09CFD34B46A3A6BE664D /* libPods.a */,
-				7089A462D0344CF18D9C7BF5 /* libPods-XNGOAuth1ClientTests.a */,
+				BA82F3502A28155E4FABFEC2 /* libPods-XNGOAuth1ClientTests.a */,
+				9A806798F2CB3FA4AD4ECAB2 /* libPods-XNGOAuth1ClientExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F0EADDF418BA520000BB8831 /* XNGOAuth1Client */ = {
+		F0EADDF418BA520000BB8831 /* XNGOAuth1ClientExample */ = {
 			isa = PBXGroup;
 			children = (
 				F0EADDF518BA520000BB8831 /* Supporting Files */,
 			);
-			path = XNGOAuth1Client;
+			name = XNGOAuth1ClientExample;
 			sourceTree = "<group>";
 		};
 		F0EADDF518BA520000BB8831 /* Supporting Files */ = {
@@ -141,8 +141,8 @@
 				F01F8BEC198FA51A00164FD2 /* main.m */,
 				F01F8BED198FA51A00164FD2 /* XNGAppDelegate.h */,
 				F01F8BEE198FA51A00164FD2 /* XNGAppDelegate.m */,
-				F01F8BEF198FA51A00164FD2 /* XNGOAuth1Client-Info.plist */,
-				F01F8BF0198FA51A00164FD2 /* XNGOAuth1Client-Prefix.pch */,
+				F01F8BEF198FA51A00164FD2 /* XNGOAuth1ClientExample-Info.plist */,
+				F01F8BF0198FA51A00164FD2 /* XNGOAuth1ClientExample-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,16 +163,16 @@
 				F0EADE0F18BA520000BB8831 /* XNGOAuth1ClientTests-Info.plist */,
 			);
 			name = "Supporting Files";
-			path = Tests;
+			path = "../Tests/Supporting Files";
 			sourceTree = "<group>";
 		};
-		F6C8EAB84E07BC0F2FF2370B /* Pods */ = {
+		F8DD040204EE915C6314DF0E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5BB33E34DDA43DADA2558254 /* Pods.debug.xcconfig */,
-				114A2E010EC49EC839CA11EC /* Pods.release.xcconfig */,
-				489E423E7B3F64F8FF4403BB /* Pods-XNGOAuth1ClientTests.debug.xcconfig */,
-				52F4FD0C486A6AF272652212 /* Pods-XNGOAuth1ClientTests.release.xcconfig */,
+				F6EE9852352A00BC9B648460 /* Pods-XNGOAuth1ClientTests.debug.xcconfig */,
+				A7FDC4D7DF7E8C58A4B238B7 /* Pods-XNGOAuth1ClientTests.release.xcconfig */,
+				EDEC050E473DD9E4D7AC6FBE /* Pods-XNGOAuth1ClientExample.debug.xcconfig */,
+				6E3C8C3C32B1A88FE2A62828 /* Pods-XNGOAuth1ClientExample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -180,34 +180,32 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F0EADDEA18BA520000BB8831 /* XNGOAuth1Client */ = {
+		F0EADDEA18BA520000BB8831 /* XNGOAuth1ClientExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0EADE1718BA520000BB8831 /* Build configuration list for PBXNativeTarget "XNGOAuth1Client" */;
+			buildConfigurationList = F0EADE1718BA520000BB8831 /* Build configuration list for PBXNativeTarget "XNGOAuth1ClientExample" */;
 			buildPhases = (
-				3356D5FCC1E447A399CE8ED2 /* Check Pods Manifest.lock */,
+				CD629145329F598690A5E859 /* [CP] Check Pods Manifest.lock */,
 				F0EADDE718BA520000BB8831 /* Sources */,
 				F0EADDE818BA520000BB8831 /* Frameworks */,
 				F0EADDE918BA520000BB8831 /* Resources */,
-				CA54F81FEFA64CADBFC50BDC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = XNGOAuth1Client;
+			name = XNGOAuth1ClientExample;
 			productName = XNGOAuth1Client;
-			productReference = F0EADDEB18BA520000BB8831 /* XNGOAuth1Client.app */;
+			productReference = F0EADDEB18BA520000BB8831 /* XNGOAuth1ClientExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F0EADE0518BA520000BB8831 /* XNGOAuth1ClientTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0EADE1A18BA520000BB8831 /* Build configuration list for PBXNativeTarget "XNGOAuth1ClientTests" */;
 			buildPhases = (
-				826FED1E9F5345FB882B963D /* Check Pods Manifest.lock */,
+				992C29AB4AEDACD36C9B6388 /* [CP] Check Pods Manifest.lock */,
 				F0EADE0218BA520000BB8831 /* Sources */,
 				F0EADE0318BA520000BB8831 /* Frameworks */,
 				F0EADE0418BA520000BB8831 /* Resources */,
-				28B84D9BD9CC4D8D9C5988B5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F0EADDE618BA520000BB8831 /* Build configuration list for PBXProject "XNGOAuth1Client" */;
+			buildConfigurationList = F0EADDE618BA520000BB8831 /* Build configuration list for PBXProject "XNGOAuth1ClientExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -248,7 +246,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F0EADDEA18BA520000BB8831 /* XNGOAuth1Client */,
+				F0EADDEA18BA520000BB8831 /* XNGOAuth1ClientExample */,
 				F0EADE0518BA520000BB8831 /* XNGOAuth1ClientTests */,
 			);
 		};
@@ -272,64 +270,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28B84D9BD9CC4D8D9C5988B5 /* Copy Pods Resources */ = {
+		992C29AB4AEDACD36C9B6388 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XNGOAuth1ClientTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XNGOAuth1ClientTests/Pods-XNGOAuth1ClientTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3356D5FCC1E447A399CE8ED2 /* Check Pods Manifest.lock */ = {
+		CD629145329F598690A5E859 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XNGOAuth1ClientExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		826FED1E9F5345FB882B963D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CA54F81FEFA64CADBFC50BDC /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -358,17 +332,17 @@
 /* Begin PBXTargetDependency section */
 		F01F8BF5198FA55500164FD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F0EADDEA18BA520000BB8831 /* XNGOAuth1Client */;
+			target = F0EADDEA18BA520000BB8831 /* XNGOAuth1ClientExample */;
 			targetProxy = F01F8BF4198FA55500164FD2 /* PBXContainerItemProxy */;
 		};
 		F01F8BF7198FA55500164FD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F0EADDEA18BA520000BB8831 /* XNGOAuth1Client */;
+			target = F0EADDEA18BA520000BB8831 /* XNGOAuth1ClientExample */;
 			targetProxy = F01F8BF6198FA55500164FD2 /* PBXContainerItemProxy */;
 		};
 		F0EADE0C18BA520000BB8831 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F0EADDEA18BA520000BB8831 /* XNGOAuth1Client */;
+			target = F0EADDEA18BA520000BB8831 /* XNGOAuth1ClientExample */;
 			targetProxy = F0EADE0B18BA520000BB8831 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -408,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -442,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -450,16 +424,16 @@
 		};
 		F0EADE1818BA520000BB8831 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BB33E34DDA43DADA2558254 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = EDEC050E473DD9E4D7AC6FBE /* Pods-XNGOAuth1ClientExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "XNGOAuth1Client-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/XNGOAuth1Client-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				GCC_PREFIX_HEADER = "XNGOAuth1ClientExample-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/XNGOAuth1ClientExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
@@ -468,16 +442,16 @@
 		};
 		F0EADE1918BA520000BB8831 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 114A2E010EC49EC839CA11EC /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6E3C8C3C32B1A88FE2A62828 /* Pods-XNGOAuth1ClientExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "XNGOAuth1Client-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/XNGOAuth1Client-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				GCC_PREFIX_HEADER = "XNGOAuth1ClientExample-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/XNGOAuth1ClientExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
@@ -486,42 +460,42 @@
 		};
 		F0EADE1B18BA520000BB8831 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 489E423E7B3F64F8FF4403BB /* Pods-XNGOAuth1ClientTests.debug.xcconfig */;
+			baseConfigurationReference = F6EE9852352A00BC9B648460 /* Pods-XNGOAuth1ClientTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XNGOAuth1Client.app/XNGOAuth1Client";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "XNGOAuth1Client-Prefix.pch";
+				GCC_PREFIX_HEADER = "XNGOAuth1ClientExample-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Tests/XNGOAuth1ClientTests-Info.plist";
+				INFOPLIST_FILE = "Tests/Supporting Files/XNGOAuth1ClientTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XNGOAuth1ClientExample.app/XNGOAuth1ClientExample";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
 		F0EADE1C18BA520000BB8831 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52F4FD0C486A6AF272652212 /* Pods-XNGOAuth1ClientTests.release.xcconfig */;
+			baseConfigurationReference = A7FDC4D7DF7E8C58A4B238B7 /* Pods-XNGOAuth1ClientTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XNGOAuth1Client.app/XNGOAuth1Client";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "XNGOAuth1Client-Prefix.pch";
-				INFOPLIST_FILE = "Tests/XNGOAuth1ClientTests-Info.plist";
+				GCC_PREFIX_HEADER = "XNGOAuth1ClientExample-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Supporting Files/XNGOAuth1ClientTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XNGOAuth1ClientExample.app/XNGOAuth1ClientExample";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -529,7 +503,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F0EADDE618BA520000BB8831 /* Build configuration list for PBXProject "XNGOAuth1Client" */ = {
+		F0EADDE618BA520000BB8831 /* Build configuration list for PBXProject "XNGOAuth1ClientExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0EADE1518BA520000BB8831 /* Debug */,
@@ -538,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0EADE1718BA520000BB8831 /* Build configuration list for PBXNativeTarget "XNGOAuth1Client" */ = {
+		F0EADE1718BA520000BB8831 /* Build configuration list for PBXNativeTarget "XNGOAuth1ClientExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0EADE1818BA520000BB8831 /* Debug */,

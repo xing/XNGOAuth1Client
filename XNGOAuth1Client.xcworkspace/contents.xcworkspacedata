@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Example/XNGOAuth1Client.xcodeproj">
+      location = "group:Example/Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Example/Pods/Pods.xcodeproj">
+      location = "group:Example/XNGOAuth1ClientExample.xcodeproj">
    </FileRef>
 </Workspace>

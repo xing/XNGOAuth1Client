@@ -30,14 +30,22 @@ DEPENDENCIES:
   - OHHTTPStubs (~> 3.1.0)
   - XNGOAuth1Client (from `../XNGOAuth1Client.podspec`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Expecta
+    - OHHTTPStubs
+
 EXTERNAL SOURCES:
   XNGOAuth1Client:
-    :path: ../XNGOAuth1Client.podspec
+    :path: "../XNGOAuth1Client.podspec"
 
 SPEC CHECKSUMS:
-  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
-  Expecta: 578e0c29df79a96a159187599e2def686ef6a66c
-  OHHTTPStubs: 8b032ab399e356050010ed34613ee1761c6c8ae3
+  AFNetworking: 96ac9bf3eda33582701cb1fcc5b896aa1e20311e
+  Expecta: 1fd7b27eb5306541720fa578f1ea066c3f411d4d
+  OHHTTPStubs: b7b9e6a5de5f324b7fafea4a5269ada5e4e156bc
   XNGOAuth1Client: 89be440709efeefd1d234e5eb8b67181b4ae4dc7
 
-COCOAPODS: 0.35.0
+PODFILE CHECKSUM: b53204ef2fe7d81cfae0e4ed7bd75eea43cd3b50
+
+COCOAPODS: 1.5.2
